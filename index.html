@@ -76,6 +76,63 @@
         border-radius: 30px;
         backdrop-filter: blur(10px);
     }
+    .nav-link {
+        font-size: 14px;
+        color: var(--text-grey);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        transition: color 0.2s;
+    }
+
+    .nav-link:hover, .nav-link.active {
+        color: var(--text-white);
+    }
+
+    /* Dropdown CSS */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-menu {
+        visibility: hidden;
+        position: absolute;
+        top: 100%;
+        right: -10px;
+        background-color: var(--card-bg);
+        min-width: 220px;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.8);
+        border: 1px solid var(--border-color);
+        border-radius: 10px;
+        z-index: 100;
+        padding: 10px 0;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+    }
+
+    /* Hover trigger */
+    .dropdown:hover .dropdown-menu {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(5px);
+    }
+
+    .dropdown-item {
+        color: var(--text-grey);
+        padding: 10px 20px;
+        text-decoration: none;
+        display: block;
+        font-size: 13px;
+        transition: background 0.2s, color 0.2s;
+    }
+
+    .dropdown-item:hover {
+        background-color: rgba(255,255,255,0.05);
+        color: var(--text-white);
+    }
 
     .pill-item {
         padding: 6px 18px;
