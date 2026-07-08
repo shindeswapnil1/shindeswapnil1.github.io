@@ -294,30 +294,7 @@
 
 <div class="container">
     
-    <!-- Top Navigation with Hover Dropdown -->
-    <nav class="nav-bar">
-        <div class="nav-left">
-            <a href="index.html" class="name">Swapnil Shinde</a>
-        </div>
-        <div class="nav-right">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="experience.html" class="nav-link">Experience</a>
-            
-            <!-- Dropdown Container -->
-            <div class="dropdown">
-																				
-                <a href="artifacts.html" class="nav-link active">
-                    Artifacts <span class="material-icons" style="font-size:16px;">keyboard_arrow_down</span>
-                </a>
-				
-												   
-                <div class="dropdown-menu">
-                    <a href="artifact1.html" class="dropdown-item">Workshop1.3</a>
-                    
-                </div>
-            </div>
-        </div>
-    </nav>
+   <div id="nav-placeholder"></div>
 
     <!-- Header -->
     <header class="page-header">
@@ -424,6 +401,26 @@
         evt.currentTarget.classList.add("active");
     }
 </script>
+<!-- Script to load the Navbar and highlight the active link -->
+<script>
+    fetch('navbar.html')
+    .then(response => response.text())
+    .then(data => {
+        // Inject the navbar HTML into the placeholder
+        document.getElementById('nav-placeholder').innerHTML = data;
+        
+        // Smart routing to highlight the active tab
+        let currentUrl = window.location.pathname.split('/').pop() || 'index.html';
+        let navLinks = document.querySelectorAll('.nav-link');
+        
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentUrl) {
+                link.classList.add('active');
+            }
+        });
+    })
+    .catch(error => console.error('Error loading navbar:', error));
+</script>	
 
 </body>
 </html>
