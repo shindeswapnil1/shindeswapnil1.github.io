@@ -4,150 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Swapnil Shinde Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@1,600&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<style>
-    :root {
-        --bg-black: #0d0d0e;
-        --window-bg: #131315;
-        --text-white: #ffffff;
-        --text-grey: #8e8e93;
-        --border-color: #222224;
-    }
-
-    body {
-        margin: 0;
-        padding: 0;
-        background-color: var(--bg-black);
-        font-family: 'Inter', sans-serif;
-        color: var(--text-white);
-        overflow: hidden;
-    }
-
-    #scale-wrapper {
-        width: 100%;
-        transform-origin: top left;
-        transition: transform 0.1s ease-out;
-    }
-
-    .portfolio-hero-container {
-        width: 1200px;
-        height: 720px;
-        position: relative;
-        padding: 30px 60px;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    /* --- Unified Navigation Bar --- */
-    .nav-bar { display: flex; justify-content: space-between; align-items: center; width: 100%; z-index: 10; position: relative;}
-    .nav-left { display: flex; flex-direction: column; }
-    .nav-left .name { font-size: 18px; font-weight: 700; letter-spacing: -0.5px; color: var(--text-white); text-decoration: none; }
-    .nav-left .title { font-size: 12px; color: var(--text-grey); margin-top: 2px; }
-    .nav-center .pill-nav { display: flex; background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-color); padding: 4px; border-radius: 30px; backdrop-filter: blur(10px); }
-    .pill-item { padding: 6px 18px; font-size: 13px; font-weight: 500; color: var(--text-grey); text-decoration: none; border-radius: 20px; transition: all 0.2s ease; }
-    .pill-item:hover, .pill-item.active { background: rgba(255, 255, 255, 0.08); color: var(--text-white); box-shadow: 0 2px 8px rgba(0,0,0,0.4); }
-    .nav-right { display: flex; align-items: center; gap: 20px; }
-    .nav-link { font-size: 14px; color: var(--text-grey); text-decoration: none; display: flex; align-items: center; gap: 5px; transition: color 0.2s; }
-    .nav-link:hover, .nav-link.active { color: var(--text-white); }
-    .dropdown { position: relative; display: inline-block; }
-    .dropdown-menu { visibility: hidden; position: absolute; top: 100%; right: -10px; background-color: var(--window-bg); min-width: 220px; box-shadow: 0 15px 30px rgba(0,0,0,0.8); border: 1px solid var(--border-color); border-radius: 10px; z-index: 100; padding: 10px 0; opacity: 0; transform: translateY(10px); transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s; }
-    .dropdown:hover .dropdown-menu { visibility: visible; opacity: 1; transform: translateY(5px); }
-    .dropdown-item { color: var(--text-grey); padding: 10px 20px; text-decoration: none; display: block; font-size: 13px; transition: background 0.2s, color 0.2s; }
-    .dropdown-item:hover { background-color: rgba(255,255,255,0.05); color: var(--text-white); }
-
-    /* --- OS Window Container --- */
-    .window-frame {
-        width: 100%;
-        height: 500px;
-        background: var(--window-bg);
-        border: 1px solid var(--border-color);
-        border-radius: 12px;
-        box-shadow: 0 30px 60px rgba(0,0,0,0.4);
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        margin-top: 20px;
-    }
-
-    .window-header {
-        height: 40px;
-        padding: 0 16px;
-        display: flex;
-        align-items: center;
-        border-bottom: 1px solid rgba(255,255,255,0.02);
-    }
-
-    .window-dots { display: flex; gap: 8px; }
-    .dot { width: 12px; height: 12px; border-radius: 50%; }
-    .dot-close { background-color: #ff5f56; }
-    .dot-min { background-color: #ffbd2e; }
-    .dot-max { background-color: #27c93f; }
-
-    /* --- Hero Main Content --- */
-    .window-content {
-        flex: 1;
-        padding: 60px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        position: relative;
-    }
-
-    .headline {
-        font-size: 52px;
-        font-weight: 400;
-        line-height: 1.15;
-        letter-spacing: -1.5px;
-        max-width: 900px;
-        color: #f5f5f7;
-    }
-
-    .headline em {
-        font-family: 'Cormorant Garamond', Georgia, serif;
-        font-style: italic;
-        font-weight: 600;
-        color: #ffffff;
-        padding-right: 4px;
-    }
-
-    .sub-details {
-        align-self: flex-end;
-        text-align: right;
-        max-width: 450px;
-        margin-top: 40px;
-    }
-
-    .sub-details .role-info {
-        font-size: 16px;
-        font-weight: 500;
-        color: var(--text-white);
-        margin-bottom: 4px;
-    }
-
-    /* --- Scroll Indicator --- */
-    .scroll-arrow {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        padding-top: 10px;
-    }
-
-    .scroll-arrow .material-icons {
-        color: var(--text-grey);
-        font-size: 28px;
-        animation: bounce 2s infinite;
-    }
-
-    @keyframes bounce {
-        0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-        40% { transform: translateY(-6px); }
-        60% { transform: translateY(-3px); }
-    }
-</style>
+<link rel="stylesheet" href="styles.css">
+<script src="scripts.js" defer></script>
 </head>
 <body>
 
@@ -178,46 +36,12 @@
             </div>
         </div>
 
-        <!-- Subtle Navigation Anchor Element -->
         <div class="scroll-arrow">
             <span class="material-icons">arrow_downward</span>
         </div>
 
     </div>
 </div>
-
-<script>
-    function handleResponseScaling() {
-        const scaleWrapper = document.getElementById('scale-wrapper');
-        const viewableWidth = document.body.clientWidth || window.innerWidth;
-        const masterDesignWidth = 1200; 
-        const masterDesignHeight = 720;
-        const scalePercentageRatio = viewableWidth / masterDesignWidth;
-        
-        scaleWrapper.style.transform = 'scale(' + scalePercentageRatio + ')';
-        document.body.style.height = (masterDesignHeight * scalePercentageRatio) + 'px';
-    }
-
-    window.addEventListener('resize', handleResponseScaling);
-    setTimeout(handleResponseScaling, 50);
-    setTimeout(handleResponseScaling, 400);
-</script>
-
-<script>
-    fetch('navbar.html')
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById('nav-placeholder').innerHTML = data;
-        let currentUrl = window.location.pathname.split('/').pop() || 'index.html';
-        let navLinks = document.querySelectorAll('.nav-link');
-        navLinks.forEach(link => {
-            if (link.getAttribute('href') === currentUrl) {
-                link.classList.add('active');
-            }
-        });
-    })
-    .catch(error => console.error('Error loading navbar:', error));
-</script>
 
 </body>
 </html>
