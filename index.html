@@ -24,7 +24,6 @@
         overflow: hidden;
     }
 
-    /* Auto-scale wrapper to fit Google Sites iframe precisely */
     #scale-wrapper {
         width: 100%;
         transform-origin: top left;
@@ -42,133 +41,22 @@
         justify-content: space-between;
     }
 
-    /* --- Navigation Bar --- */
-    .nav-bar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        z-index: 10;
-    }
-
-    .nav-left {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .nav-left .name {
-        font-size: 18px;
-        font-weight: 700;
-        letter-spacing: -0.5px;
-    }
-
-    .nav-left .title {
-        font-size: 12px;
-        color: var(--text-grey);
-        margin-top: 2px;
-    }
-
-    .nav-center .pill-nav {
-        display: flex;
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid var(--border-color);
-        padding: 4px;
-        border-radius: 30px;
-        backdrop-filter: blur(10px);
-    }
-    .nav-link {
-        font-size: 14px;
-        color: var(--text-grey);
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        transition: color 0.2s;
-    }
-
-    .nav-link:hover, .nav-link.active {
-        color: var(--text-white);
-    }
-
-    /* Dropdown CSS */
-    .dropdown {
-        position: relative;
-        display: inline-block;
-    }
-
-    .dropdown-menu {
-        visibility: hidden;
-        position: absolute;
-        top: 100%;
-        right: -10px;
-        background-color: var(--card-bg);
-        min-width: 220px;
-        box-shadow: 0 15px 30px rgba(0,0,0,0.8);
-        border: 1px solid var(--border-color);
-        border-radius: 10px;
-        z-index: 100;
-        padding: 10px 0;
-        opacity: 0;
-        transform: translateY(10px);
-        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
-    }
-
-    /* Hover trigger */
-    .dropdown:hover .dropdown-menu {
-        visibility: visible;
-        opacity: 1;
-        transform: translateY(5px);
-    }
-
-    .dropdown-item {
-        color: var(--text-grey);
-        padding: 10px 20px;
-        text-decoration: none;
-        display: block;
-        font-size: 13px;
-        transition: background 0.2s, color 0.2s;
-    }
-
-    .dropdown-item:hover {
-        background-color: rgba(255,255,255,0.05);
-        color: var(--text-white);
-    }
-
-    .pill-item {
-        padding: 6px 18px;
-        font-size: 13px;
-        font-weight: 500;
-        color: var(--text-grey);
-        text-decoration: none;
-        border-radius: 20px;
-        transition: all 0.2s ease;
-    }
-
-    .pill-item.active {
-        background: rgba(255, 255, 255, 0.08);
-        color: var(--text-white);
-        box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-    }
-
-    .nav-right {
-        display: flex;
-        gap: 20px;
-    }
-
-    .nav-link {
-        font-size: 14px;
-        color: var(--text-white);
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        gap: 3px;
-        opacity: 0.8;
-        transition: opacity 0.2s;
-    }
-
-    .nav-link:hover {
-        opacity: 1;
-    }
+    /* --- Unified Navigation Bar --- */
+    .nav-bar { display: flex; justify-content: space-between; align-items: center; width: 100%; z-index: 10; position: relative;}
+    .nav-left { display: flex; flex-direction: column; }
+    .nav-left .name { font-size: 18px; font-weight: 700; letter-spacing: -0.5px; color: var(--text-white); text-decoration: none; }
+    .nav-left .title { font-size: 12px; color: var(--text-grey); margin-top: 2px; }
+    .nav-center .pill-nav { display: flex; background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-color); padding: 4px; border-radius: 30px; backdrop-filter: blur(10px); }
+    .pill-item { padding: 6px 18px; font-size: 13px; font-weight: 500; color: var(--text-grey); text-decoration: none; border-radius: 20px; transition: all 0.2s ease; }
+    .pill-item:hover, .pill-item.active { background: rgba(255, 255, 255, 0.08); color: var(--text-white); box-shadow: 0 2px 8px rgba(0,0,0,0.4); }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    .nav-link { font-size: 14px; color: var(--text-grey); text-decoration: none; display: flex; align-items: center; gap: 5px; transition: color 0.2s; }
+    .nav-link:hover, .nav-link.active { color: var(--text-white); }
+    .dropdown { position: relative; display: inline-block; }
+    .dropdown-menu { visibility: hidden; position: absolute; top: 100%; right: -10px; background-color: var(--window-bg); min-width: 220px; box-shadow: 0 15px 30px rgba(0,0,0,0.8); border: 1px solid var(--border-color); border-radius: 10px; z-index: 100; padding: 10px 0; opacity: 0; transform: translateY(10px); transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s; }
+    .dropdown:hover .dropdown-menu { visibility: visible; opacity: 1; transform: translateY(5px); }
+    .dropdown-item { color: var(--text-grey); padding: 10px 20px; text-decoration: none; display: block; font-size: 13px; transition: background 0.2s, color 0.2s; }
+    .dropdown-item:hover { background-color: rgba(255,255,255,0.05); color: var(--text-white); }
 
     /* --- OS Window Container --- */
     .window-frame {
@@ -192,16 +80,8 @@
         border-bottom: 1px solid rgba(255,255,255,0.02);
     }
 
-    .window-dots {
-        display: flex;
-        gap: 8px;
-    }
-
-    .dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-    }
+    .window-dots { display: flex; gap: 8px; }
+    .dot { width: 12px; height: 12px; border-radius: 50%; }
     .dot-close { background-color: #ff5f56; }
     .dot-min { background-color: #ffbd2e; }
     .dot-max { background-color: #27c93f; }
@@ -247,11 +127,6 @@
         margin-bottom: 4px;
     }
 
-    .sub-details .past-info {
-        font-size: 14px;
-        color: var(--text-grey);
-    }
-
     /* --- Scroll Indicator --- */
     .scroll-arrow {
         display: flex;
@@ -279,41 +154,8 @@
 <div id="scale-wrapper">
     <div class="portfolio-hero-container">
         
-        <!-- Header / Navigation Bar -->
-        <nav class="nav-bar">
-            <div class="nav-left">
-                <span class="name">Swapnil S Shinde</span>
-                <span class="title">Senior Business Analyst</span>
-            </div>
-            
-            <div class="nav-center">
-                <div class="pill-nav">
-					<a href="#" class="pill-item active">Info</a>
-                    <a href="experience.html" class="pill-item">Work</a>    
-                </div>
-            </div>
-            
-            <div class="nav-right">
-                <!-- <a href="#" target="_top" class="nav-link">Experience <span class="material-icons" style="font-size:14px;">north_east</span></a>
-                <a href="artifact1.html" target="_top" class="nav-link">Resume <span class="material-icons" style="font-size:14px;" >north_east</span></a>-->
-
-			            <!-- Dropdown Container -->
-			            <div class="dropdown">
-			                <!-- Clicking this main link takes you to the artifacts page -->
-			                <a href="artifacts.html" class="nav-link active">
-			                    Artifacts <span class="material-icons" style="font-size:16px;">keyboard_arrow_down</span>
-			                </a>
-			                
-			                <!-- Hovering reveals this menu -->
-			                <div class="dropdown-menu">
-			                    <a href="artifact1.html" class="dropdown-item">artifact1</a>
-			                    <!--<a href="#" class="dropdown-item">artifact1</a>
-			                    <a href="#" class="dropdown-item">artifact1</a>
-			                    <a href="#" class="dropdown-item">artifact1</a>-->
-			                </div>
-			            </div>
-            </div>
-        </nav>
+        <!-- Fetched Navigation Bar Placeholder -->
+        <div id="nav-placeholder"></div>
 
         <!-- Centered UI Window Area -->
         <div class="window-frame">
@@ -326,15 +168,12 @@
             </div>
             
             <div class="window-content">
-                <!-- High-Impact Hybrid Typography Headline -->
                 <h1 class="headline">
                     I bridge the gap between complex business needs & <em>technical execution.</em>
                 </h1>
-                
-                <!-- Lower Right Sub-Context Alignment -->
                 <div class="sub-details">
                     <div class="role-info">Senior Business Analyst at Trimble Inc.</div>
-			<div class="role-info">Based in Cincinnati.</div>
+                    <div class="role-info" style="color: var(--text-grey); font-size: 14px;">Based in Cincinnati.</div>
                 </div>
             </div>
         </div>
@@ -347,15 +186,12 @@
     </div>
 </div>
 
-<!-- Dynamic Layout Responsive Rescaling Implementation -->
 <script>
     function handleResponseScaling() {
         const scaleWrapper = document.getElementById('scale-wrapper');
         const viewableWidth = document.body.clientWidth || window.innerWidth;
-        
         const masterDesignWidth = 1200; 
         const masterDesignHeight = 720;
-        
         const scalePercentageRatio = viewableWidth / masterDesignWidth;
         
         scaleWrapper.style.transform = 'scale(' + scalePercentageRatio + ')';
@@ -365,6 +201,22 @@
     window.addEventListener('resize', handleResponseScaling);
     setTimeout(handleResponseScaling, 50);
     setTimeout(handleResponseScaling, 400);
+</script>
+
+<script>
+    fetch('navbar.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('nav-placeholder').innerHTML = data;
+        let currentUrl = window.location.pathname.split('/').pop() || 'index.html';
+        let navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentUrl) {
+                link.classList.add('active');
+            }
+        });
+    })
+    .catch(error => console.error('Error loading navbar:', error));
 </script>
 
 </body>
