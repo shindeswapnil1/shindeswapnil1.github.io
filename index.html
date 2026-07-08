@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swapnil Shinde Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+    :root {
+        --bg-black: #0d0d0e;
+        --window-bg: #131315;
+        --text-white: #ffffff;
+        --text-grey: #8e8e93;
+        --border-color: #222224;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: var(--bg-black);
+        font-family: 'Inter', sans-serif;
+        color: var(--text-white);
+        overflow: hidden;
+    }
+
+    /* Auto-scale wrapper to fit Google Sites iframe precisely */
+    #scale-wrapper {
+        width: 100%;
+        transform-origin: top left;
+        transition: transform 0.1s ease-out;
+    }
+
+    .portfolio-hero-container {
+        width: 1200px;
+        height: 720px;
+        position: relative;
+        padding: 30px 60px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    /* --- Navigation Bar --- */
+    .nav-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        z-index: 10;
+    }
+
+    .nav-left {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-left .name {
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+    }
+
+    .nav-left .title {
+        font-size: 12px;
+        color: var(--text-grey);
+        margin-top: 2px;
+    }
+
+    .nav-center .pill-nav {
+        display: flex;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid var(--border-color);
+        padding: 4px;
+        border-radius: 30px;
+        backdrop-filter: blur(10px);
+    }
+
+    .pill-item {
+        padding: 6px 18px;
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--text-grey);
+        text-decoration: none;
+        border-radius: 20px;
+        transition: all 0.2s ease;
+    }
+
+    .pill-item.active {
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--text-white);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+
+    .nav-right {
+        display: flex;
+        gap: 20px;
+    }
+
+    .nav-link {
+        font-size: 14px;
+        color: var(--text-white);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        opacity: 0.8;
+        transition: opacity 0.2s;
+    }
+
+    .nav-link:hover {
+        opacity: 1;
+    }
+
+    /* --- OS Window Container --- */
+    .window-frame {
+        width: 100%;
+        height: 500px;
+        background: var(--window-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin-top: 20px;
+    }
+
+    .window-header {
+        height: 40px;
+        padding: 0 16px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid rgba(255,255,255,0.02);
+    }
+
+    .window-dots {
+        display: flex;
+        gap: 8px;
+    }
+
+    .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+    }
+    .dot-close { background-color: #ff5f56; }
+    .dot-min { background-color: #ffbd2e; }
+    .dot-max { background-color: #27c93f; }
+
+    /* --- Hero Main Content --- */
+    .window-content {
+        flex: 1;
+        padding: 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+    }
+
+    .headline {
+        font-size: 52px;
+        font-weight: 400;
+        line-height: 1.15;
+        letter-spacing: -1.5px;
+        max-width: 900px;
+        color: #f5f5f7;
+    }
+
+    .headline em {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-style: italic;
+        font-weight: 600;
+        color: #ffffff;
+        padding-right: 4px;
+    }
+
+    .sub-details {
+        align-self: flex-end;
+        text-align: right;
+        max-width: 450px;
+        margin-top: 40px;
+    }
+
+    .sub-details .role-info {
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--text-white);
+        margin-bottom: 4px;
+    }
+
+    .sub-details .past-info {
+        font-size: 14px;
+        color: var(--text-grey);
+    }
+
+    /* --- Scroll Indicator --- */
+    .scroll-arrow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding-top: 10px;
+    }
+
+    .scroll-arrow .material-icons {
+        color: var(--text-grey);
+        font-size: 28px;
+        animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+        40% { transform: translateY(-6px); }
+        60% { transform: translateY(-3px); }
+    }
+</style>
+</head>
+<body>
+
+<div id="scale-wrapper">
+    <div class="portfolio-hero-container">
+        
+        <!-- Header / Navigation Bar -->
+        <nav class="nav-bar">
+            <div class="nav-left">
+                <span class="name">Swapnil S Shinde</span>
+                <span class="title">Senior Business Analyst</span>
+            </div>
+            
+            <div class="nav-center">
+                <div class="pill-nav">
+                    <a href="#" class="pill-item active">Work</a>
+                    <a href="#" class="pill-item">Info</a>
+                </div>
+            </div>
+            
+            <div class="nav-right">
+                <a href="#" target="_top" class="nav-link">Experience <span class="material-icons" style="font-size:14px;">north_east</span></a>
+                <a href="javascript:void(0);" onclick="window.top.location.href='https://sites.google.com/view/swapnilshinde/artifacts';" class="nav-link">Resume <span class="material-icons" style="font-size:14px;" >north_east</span></a>
+            </div>
+        </nav>
+
+        <!-- Centered UI Window Area -->
+        <div class="window-frame">
+            <div class="window-header">
+                <div class="window-dots">
+                    <div class="dot dot-close"></div>
+                    <div class="dot dot-min"></div>
+                    <div class="dot dot-max"></div>
+                </div>
+            </div>
+            
+            <div class="window-content">
+                <!-- High-Impact Hybrid Typography Headline -->
+                <h1 class="headline">
+                    I bridge the gap between complex business needs & <em>technical execution.</em>
+                </h1>
+                
+                <!-- Lower Right Sub-Context Alignment -->
+                <div class="sub-details">
+                    <div class="role-info">Senior Business Analyst at Trimble Inc.</div>
+			<div class="role-info">Based in Cincinnati.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Subtle Navigation Anchor Element -->
+        <div class="scroll-arrow">
+            <span class="material-icons">arrow_downward</span>
+        </div>
+
+    </div>
+</div>
+
+<!-- Dynamic Layout Responsive Rescaling Implementation -->
+<script>
+    function handleResponseScaling() {
+        const scaleWrapper = document.getElementById('scale-wrapper');
+        const viewableWidth = document.body.clientWidth || window.innerWidth;
+        
+        const masterDesignWidth = 1200; 
+        const masterDesignHeight = 720;
+        
+        const scalePercentageRatio = viewableWidth / masterDesignWidth;
+        
+        scaleWrapper.style.transform = 'scale(' + scalePercentageRatio + ')';
+        document.body.style.height = (masterDesignHeight * scalePercentageRatio) + 'px';
+    }
+
+    window.addEventListener('resize', handleResponseScaling);
+    setTimeout(handleResponseScaling, 50);
+    setTimeout(handleResponseScaling, 400);
+</script>
+
+</body>
+</html>
