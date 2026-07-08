@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Timeline Infographic</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+    :root {
+        --dark-blue: #8EC3A7;
+        --bg-color: #303030;
+        --path-color: #8EC3A7;
+        --era-blue: #8EC3A7;
+        --era-grey: #DC5356;
+        --era-green: #8EC3A7;
+        --text-dark: #fff;
+        --text-light: #fff;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg-color);
+        /* Hidden overflow to prevent scrollbars; scaling handles the fit */
+        overflow: hidden; 
+    }
+
+    /* Dynamic Scaling Wrapper */
+    #scale-container {
+        width: 100%;
+        transform-origin: top left;
+        transition: transform 0.1s ease-out;
+    }
+
+    /* Fixed design width/height to preserve exact layout before scaling */
+    .infographic-wrapper {
+        width: 1400px; 
+        height: 750px; 
+        padding: 20px;
+        margin: 0;
+        position: relative;
+        box-sizing: border-box;
+    }
+
+    /* Header Styling */
+    .main-header {
+        background-color: var(--dark-blue);
+        color: white;
+        text-align: center;
+        padding: 20px 10px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    .main-header h1 {
+        margin: 0;
+        font-size: 28px;
+        font-weight: 900;
+        letter-spacing: 1px;
+    }
+
+    .main-header h2 {
+        margin: 5px 0 0 0;
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: 1.5px;
+        color: #b0cbe8;
+    }
+
+    /* Timeline Body & SVG Path */
+    .timeline-body {
+        position: relative;
+        width: 100%;
+        height: 600px;
+    }
+
+    .background-path {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+
+    /* Row Layouts */
+    .row {
+        position: absolute;
+        width: 100%;
+        height: 180px;
+        z-index: 1;
+    }
+    
+    .row-1 { top: 10px; }
+    .row-2 { top: 260px; }
+    .row-3 { top: 510px; }
+
+    /* Era Headers */
+    .era-headers {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        top: 20px;
+        left: 30px;
+        right: 30px;
+        gap: 20px;
+    }
+
+    .era-pill {
+        padding: 6px 20px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+        color: var(--text-dark);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .pill-blue { background-color: var(--era-blue); }
+    .pill-grey { background-color: var(--era-grey); }
+    .pill-green { background-color: var(--era-green); }
+
+    /* Nodes Container */
+    .nodes-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        position: absolute;
+        top: 60px;
+        left: 40px;
+        right: 40px;
+    }
+
+    .node {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 110px;
+        position: relative;
+    }
+
+    .icon-circle {
+        width: 40px;
+        height: 40px;
+        background-color: #303030;
+        border: 4px solid var(--path-color);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        position: relative;
+    }
+
+    .icon-circle .material-icons {
+        font-size: 22px;
+        color: var(--text-dark);
+    }
+
+    .cursor {
+        position: absolute;
+        bottom: -15px;
+        right: -15px;
+        font-size: 24px !important;
+        color: #555;
+        transform: rotate(-15deg);
+        filter: drop-shadow(1px 2px 2px rgba(0,0,0,0.2));
+        z-index: 5;
+    }
+
+    .year {
+        font-size: 16px;
+        font-weight: 900;
+        margin-top: 10px;
+        color: var(--text-dark);
+    }
+
+    .prediction-tag {
+        font-size: 10px;
+        font-weight: 900;
+        position: absolute;
+        top: -20px;
+        text-align: center;
+        width: 100%;
+        color: var(--text-dark);
+    }
+
+    .desc {
+        font-size: 9px;
+        line-height: 1.3;
+        margin-top: 6px;
+        color: var(--text-light);
+        text-align: left;
+        width: 100%;
+    }
+</style>
+</head>
+<body>
+
+<!-- Dynamic Scaling Container -->
+<div id="scale-container">
+    <div class="infographic-wrapper">
+        <!-- Header -->
+        <header class="main-header">
+            <h1>JOURNEY OF AI THROUGH THE DECADES</h1>
+        </header>
+
+        <div class="timeline-body">
+            <!-- SVG S-Curve Path -->
+            <svg class="background-path" viewBox="0 0 1400 700" preserveAspectRatio="none">
+                <path d="M 80,82 L 1320,82 Q 1350,82 1350,112 L 1350,352 Q 1350,382 1320,382 L 80,382 Q 50,382 50,412 L 50,652 Q 50,682 80,682 L 1320,682" fill="none" stroke="#8db5db" stroke-width="14" stroke-linecap="round" />
+                <path d="M 80,82 L 1320,82 Q 1350,82 1350,112 L 1350,352 Q 1350,382 1320,382 L 80,382 Q 50,382 50,412 L 50,652 Q 50,682 80,682 L 1320,682" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" />
+            </svg>
+
+            <!-- ROW 1: 1950s - 1970s -->
+            <div class="row row-1">
+                <div class="era-headers">
+                    <div class="era-pill pill-blue" style="width: 50%;">1950s-1960s: THE BIRTH OF AI</div>
+                    <div class="era-pill pill-blue" style="width: 20%;">1970s: THE RISE OF AI</div>
+		    <div class="era-pill pill-grey" style="width: 20%;">1974-1980s: THE FIRST AI WINTER</div>
+                </div>
+                <div class="nodes-container">
+                    <div class="node">
+                        <div class="icon-circle"><span class="material-icons">grid_on</span><span class="material-icons cursor">touch_app</span></div>
+                        <div class="year">1951</div>
+                        <div class="desc">Christopher Strachey develops the first successful AI program, demonstrating checkers playing on the Ferranti Mark I computer, showcasing early machine learning capabilities.</div>
+                    </div>
+                    <div class="node">
+                        <div class="icon-circle"><span class="material-icons">psychology</span></div>
+                        <div class="year">1956</div>
+                        <div class="desc">The Dartmouth Conference is held, marking the official birth of Artificial Intelligence as a field of study. Key figures like John McCarthy, Marvin Minsky participate.</div>
+                    </div>
+                    <div class="node">
+                        <div class="icon-circle"><span class="material-icons">trending_up</span></div>
+                        <div class="year">1959</div>
+                        <div class="desc">Arthur Samuel coins the term 'machine learning' while developing a program that learns to play checkers, emphasizing the potential of algorithms to improve over time.</div>
+                    </div>
+                    <div class="node">
+                        <div class="icon-circle"><span class="material-icons">extension</span></div>
+                        <div class="year">1965</div>
+                        <div class="desc">The first AI-based game, 'Chess', is developed by Alan Turing, marking the entry of AI into strategic gameplay and cognitive challenges.</div>
+                    </div>
+                    <div class="node">
+                        <div class="icon-circle"><span class="material-icons">forum</span><span class="material-icons cursor">touch_app</span></div>
+                        <div class="year">1966</div>
+                        <div class="desc">ELIZA, an early natural language processing program, is created by Joseph Weizenbaum, demonstrating the capability of machines to simulate human conversation.</div>
+                    </div>
+                    <div class="node">
+                        <div class="icon-circle"><span class="material-icons">science</span></div>
+                        <div class="year">1970</div>
+                        <div class="desc">The introduction of the first successful expert system, DENDRAL, which analyzed chemical compounds and aided chemists in identifying molecular structures.</div>
+                    </div>
+                    <div class="node">
+                        <div class="icon-circle"><span class="material-icons">medical_services</span></div>
+                        <div class="year">1972</div>
+                        <div class="desc">MYCIN, an early expert system for diagnosing bacterial infections and recommending antibiotics, demonstrates the practical potential of AI in healthcare.</div>
+                    </div>
+                    <div class="node">
+                        <div class="icon-circle"><span class="material-icons">explore</span></div>
+                        <div class="year">1976</div>
+                        <div class="desc">The development of PROSPECTOR, an expert system for mineral exploration, illustrates AI's application in geology and mining.</div>
+                    </div>
+                    <div class="node">
+                        <div class="icon-circle"><span class="material-icons">account_tree</span></div>
+                        <div class="year">1979</div>
+                        <div class="desc">The advent of knowledge representation and reasoning techniques, enhancing the capabilities of AI systems and enabling more complex problem-solving.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ROW 2: 1980s - 1990s -->
+            <div class="row row-2">
+                <div class="era-headers">
+                    <div class="era-pill pill-grey" style="width: 40%;">LATE 1980s-1990s: THE SECOND AI WINTER</div>
+		    <div class="era-pill pill-green" style="width: 45%;">1980s: SIGNIFICANT ACHIEVEMENTS</div>
+                </div>
+                <div class="nodes-container" style="justify-content: flex-start; gap: 90px; padding-left: 10px;">
+		    
+		    <div class="node">
+                        <div class="icon-circle"><span class="material-icons">wb_sunny</span><span class="material-icons cursor">touch_app</span></div>
+                        <div class="year">1997</div>
+                        <div class="desc">The AI winter begins to thaw as IBM's Deep Blue defeats world chess champion Garry Kasparov, rekindling interest in AI technologies.</div>
+                    </div>
+                    <div class="node">
+                        <div class="icon-circle"><span class="material-icons">trending_down</span></div>
+                        <div class="year">1993</div>
+                        <div class="desc">By 1993, industry interest in AI continues to wane, leading to layoffs and the shuttering of various AI research initiatives as funding diminishes.</div>
+                    </div>
+		    <div class="node">
+                        <div class="icon-circle"><span class="material-icons">warning</span></div>
+                        <div class="year">1989</div>
+                        <div class="desc">Notable projects such as the Lisp Machine and others fail to deliver on their promises, further exacerbating skepticism toward AI's potential.</div>
+                    </div>
+                    <div class="node" style="margin-left: 90px;">
+                        <div class="icon-circle"><span class="material-icons">ac_unit</span></div>
+                        <div class="year">1987</div>
+                        <div class="desc">The first significant AI winter begins as funding cuts from government agencies and a decline in interest from private investors significantly hinder AI research.</div>
+                    </div>
+                    <div class="node">
+                        <div class="icon-circle"><span class="material-icons">menu_book</span></div>
+                        <div class="year">1985</div>
+                        <div class="desc">Introduction of the 'Knowledge Engineering' field, emphasizing the importance of knowledge representation in AI systems, leading to further advancements in AI applications.</div>
+                    </div>
+                    
+		    <div class="node">
+                        <div class="icon-circle"><span class="material-icons">computer</span></div>
+                        <div class="year">1980</div>
+                        <div class="desc">Development of Expert Systems, which utilized rule-based methods to solve complex problems in specific domains, gaining popularity in business and medicine.</div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+
+            <!-- ROW 3: 2000s - 2026 -->
+            <div class="row row-3">
+                <div class="era-headers">
+                    <div class="era-pill pill-green" style="width: 55%;">2000-2017: RESURGENCE OF AI</div>
+                    <div class="era-pill pill-green" style="width: 40%;">2018-2026: CLOUD COMPUTING AND LLMs</div>
+                </div>
+                <div class="nodes-container">
+                    <div class="node">
+                        <div class="icon-circle"><span class="material-icons">hub</span></div>
+                        <div class="year">2006</div>
+                        <div class="desc">Geoffrey Hinton and his team reintroduce deep learning, leading to breakthroughs in neural networks, particularly in speech and image recognition.</div>
+                    </div>
+                    <div class="node">
+                        <div class="icon-circle"><span class="material-icons">image_search</span></div>
+                        <div class="year">2012</div>
+                        <div class="desc">A landmark year when a convolutional neural network (AlexNet) won the ImageNet competition, significantly reducing the error rate in image classification.</div>
+                    </div>
+                    <div class="node">
+                        <div class="icon-circle"><span class="material-icons">memory</span></div>
+                        <div class="year">2014</div>
+                        <div class="desc">Google acquires DeepMind, a leading AI company known for its work in deep reinforcement learning, marking a significant investment in AI research.</div>
+                    </div>
+                    <div class="node">
+                        <div class="icon-circle"><span class="material-icons">sports_esports</span></div>
+                        <div class="year">2016</div>
+                        <div class="desc">AlphaGo, developed by DeepMind, defeats world champion Go player Lee Sedol, showcasing the potential of AI in complex problem-solving.</div>
+                    </div>
+                    <div class="node">
+                        <div class="icon-circle"><span class="material-icons">cloud_done</span></div>
+                        <div class="year">2017</div>
+                        <div class="desc">Google Cloud AI launches, providing tools like TensorFlow, which significantly aids developers in creating and deploying machine learning models.</div>
+                    </div>
+		    <div class="node">
+                        <div class="icon-circle"><span class="material-icons">edit_document</span></div>
+                        <div class="year">2018</div>
+                        <div class="desc">OpenAI releases the first version of GPT, demonstrating the capabilities of AI in natural language processing and generating human-like text.</div>
+                    </div>
+                    <div class="node">
+                        <div class="icon-circle"><span class="material-icons">domain</span></div>
+                        <div class="year">2020</div>
+                        <div class="desc">Introduction of AI-driven cloud services from Microsoft Azure, emphasizing scalable AI solutions for enterprises and enhancing operational efficiency.</div>
+                    </div>
+                    <div class="node">
+                        <div class="icon-circle"><span class="material-icons">auto_awesome</span></div>
+                        <div class="year">2023</div>
+                        <div class="desc">Advancements in AI capabilities lead to the rise of Generative AI models, heavily supported by cloud infrastructure, enabling new applications in content creation and automation.</div>
+                    </div>
+                    <div class="node">
+                        
+                        <div class="icon-circle"><span class="material-icons">public</span></div>
+                        <div class="year">2026</div>
+                        <div class="desc">Predictions indicate a future where cloud-based AI will be ubiquitous, powering industries, enhancing personalization, and driving decision-making across sectors.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript to dynamically scale the layout to the exact width of the frame -->
+<script>
+    function fitToFrame() {
+        const wrapper = document.getElementById('scale-container');
+        // Get the current available width from the body/iframe
+        const containerWidth = document.body.clientWidth || window.innerWidth;
+        
+        // Our hardcoded design width and height
+        const designWidth = 1400; 
+        const designHeight = 750;
+        
+        // Calculate the necessary scale ratio
+        const scale = containerWidth / designWidth;
+        
+        // Apply scaling
+        wrapper.style.transform = 'scale(' + scale + ')';
+        
+        // Shrink the height of the body so the iframe isn't left with empty white space below
+        document.body.style.height = (designHeight * scale) + 'px';
+    }
+
+    // Run the scale function on load and whenever the frame resizes
+    window.addEventListener('resize', fitToFrame);
+    
+    // Using a slight delay to ensure Google Sites has fully rendered the iframe block dimensions
+    setTimeout(fitToFrame, 50);
+    setTimeout(fitToFrame, 500);
+</script>
+
+</body>
+</html>
