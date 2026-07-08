@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Swapnil Shinde - Artifacts</title>
+<title>Swapnil Shinde - Artifact Details</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@1,600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <style>
@@ -13,6 +13,8 @@
         --border-color: #222224;
         --text-white: #ffffff;
         --text-grey: #8e8e93;
+        --primary-accent: #ffffff;
+        --hover-bg: rgba(255, 255, 255, 0.05);
     }
 
     body {
@@ -69,7 +71,7 @@
         color: var(--text-white);
     }
 
-    /* Dropdown CSS */
+					  
     .dropdown {
         position: relative;
         display: inline-block;
@@ -92,7 +94,7 @@
         transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
     }
 
-    /* Hover trigger */
+					   
     .dropdown:hover .dropdown-menu {
         visibility: visible;
         opacity: 1;
@@ -136,75 +138,154 @@
         font-size: 16px;
     }
 
-    /* --- Artifacts Grid (Tiles) --- */
-    .artifacts-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 25px;
-    }
+										
+					 
+					  
+																	 
+				  
+	 
 
-    .tile {
+    /* --- Tab Pane Container --- */
+    .tab-pane-container {
+        width: 100%;
         background: var(--card-bg);
         border: 1px solid var(--border-color);
         border-radius: 12px;
-        padding: 30px;
-        text-decoration: none;
-        display: flex;
-        flex-direction: column;
-        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s;
-        cursor: pointer;
-    }
-
-    .tile:hover {
-        transform: translateY(-4px);
+        overflow: hidden;
         box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-        border-color: rgba(255,255,255,0.2);
+					  
+							   
+																														 
+						
     }
 
-    .tile-icon {
-        width: 40px;
-        height: 40px;
-        background: rgba(255,255,255,0.05);
-        border-radius: 8px;
+    .tab-header {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 20px;
-    }
-
-    .tile-icon .material-icons {
-        color: var(--text-white);
-        font-size: 20px;
-    }
-
-    .tile-title {
-        font-size: 18px;
-        font-weight: 700;
-        color: var(--text-white);
-        margin: 0 0 10px 0;
-        letter-spacing: -0.5px;
-    }
-
-    .tile-desc {
-        font-size: 14px;
-        color: var(--text-grey);
-        line-height: 1.5;
-        margin: 0;
-        flex-grow: 1;
+        background: rgba(0,0,0,0.2);
+        border-bottom: 1px solid var(--border-color);
+        overflow-x: auto; 
+        scrollbar-width: none; 
     }
     
-    .tile-footer {
-        margin-top: 20px;
-        font-size: 12px;
-        text-transform: uppercase;
+    .tab-header::-webkit-scrollbar { 
+        display: none; 
+    }
+
+    .tab-btn {
+        background: transparent;
+        border: none;
+        outline: none;
+        color: var(--text-grey);
+        padding: 18px 24px;
+        font-size: 13px;
+        font-weight: 600;
         letter-spacing: 1px;
-        color: #555;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border-bottom: 2px solid transparent;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+							
+    }
+
+    .tab-btn:hover {
+        background-color: var(--hover-bg);
+        color: var(--text-white);
+						
+    }
+
+    .tab-btn.active {
+						
+						 
+        color: var(--text-white);
+        border-bottom: 2px solid var(--primary-accent);
+        background-color: transparent;
+    }
+
+    .tab-btn .material-icons {
+        font-size: 16px;
+								
+						 
+				  
+					 
+    }
+
+    /* --- Tab Content --- */
+    .tab-content {
+        display: none;
+        padding: 40px;
+        animation: fadeIn 0.4s ease-in-out;
+    }
+
+    .tab-content.active {
+        display: block;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(5px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .content-label {
+        font-size: 12px;
+        color: var(--text-grey);
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin-bottom: 8px;
         font-weight: 600;
     }
 
+    .content-title {
+        font-size: 24px;
+        font-weight: 700;
+        margin: 0 0 20px 0;
+        letter-spacing: -0.5px;
+    }
+
+    .content-body {
+        font-size: 15px;
+        color: #d1d1d6;
+        line-height: 1.7;
+    }
+
+    .content-body ul {
+        margin: 0;
+        padding-left: 20px;
+    }
+
+    .content-body li {
+        margin-bottom: 12px;
+    }
+
+    .tools-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .tool-pill {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--border-color);
+        color: var(--text-white);
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
     @media (max-width: 600px) {
-        .artifacts-grid {
-            grid-template-columns: 1fr;
+        .tab-content {
+            padding: 25px;
+        }
+        .tab-btn {
+            padding: 15px 20px;
         }
     }
 </style>
@@ -224,17 +305,15 @@
             
             <!-- Dropdown Container -->
             <div class="dropdown">
-                <!-- Clicking this main link takes you to the artifacts page -->
+																				
                 <a href="artifacts.html" class="nav-link active">
                     Artifacts <span class="material-icons" style="font-size:16px;">keyboard_arrow_down</span>
                 </a>
-                
-                <!-- Hovering reveals this menu -->
+				
+												   
                 <div class="dropdown-menu">
-                    <a href="artifact1.html" class="dropdown-item">artifact1</a>
-                    <!--<a href="#" class="dropdown-item">artifact1</a>
-                    <a href="#" class="dropdown-item">artifact1</a>
-                    <a href="#" class="dropdown-item">artifact1</a>-->
+                    <a href="artifacts1.html" class="dropdown-item">Workshop1.3</a>
+                    
                 </div>
             </div>
         </div>
@@ -242,24 +321,114 @@
 
     <!-- Header -->
     <header class="page-header">
-        <h1 class="page-title">Project <em>Artifacts</em>.</h1>
-        <p class="page-subtitle">A curated collection of deliverables, strategies, and system architectures.</p>
+        <h1 class="page-title">Artifact <em>Details</em>.</h1>
+        <p class="page-subtitle">Deep dive into the strategy, process, and execution of specific deliverables.</p>
     </header>
 
-    <!-- Artifacts Tile Grid -->
-    <div class="artifacts-grid">
+    <!-- Tab Pane Section -->
+    <div class="tab-pane-container">
         
-        <a href="artifact1.html" class="tile">
-            <div class="tile-icon"><span class="material-icons">account_tree</span></div>
-            <h3 class="tile-title">Journey of AI</h3>
-            <p class="tile-desc">The journey of Artificial Intelligence (AI) evolved from a theoretical 1950s concept into a driving global force. It transitioned from early symbolic logic, weathered funding lulls known as "AI winters", and ultimately exploded into the modern era of deep learning, enabling machines to generate creative content and outperform humans in complex strategy.We created a timeline which helps in exploring this journey.</p>
-            <div class="tile-footer">Workshop 1.3</div>
-        </a>
+        <!-- Tab Navigation -->
+        <div class="tab-header">
+            <button class="tab-btn active" onclick="openTab(event, 'tab-title')">
+                <span class="material-icons">title</span> Title
+            </button>
+            <button class="tab-btn" onclick="openTab(event, 'tab-objective')">
+                <span class="material-icons">track_changes</span> Objective
+            </button>
+            <button class="tab-btn" onclick="openTab(event, 'tab-process')">
+                <span class="material-icons">account_tree</span> Process
+            </button>
+            <button class="tab-btn" onclick="openTab(event, 'tab-tools')">
+                <span class="material-icons">build</span> Tools
+            </button>
+            <button class="tab-btn" onclick="openTab(event, 'tab-value')">
+                <span class="material-icons">diamond</span> Value
+            </button>
+        </div>
 
-       
+        <!-- Tab Contents -->
+        
+        <!-- TITLE -->
+        <div id="tab-title" class="tab-content active">
+            <div class="content-label">What is it?</div>
+            <h3 class="content-title">Project Title</h3>
+            <div class="content-body">
+                <strong>The Evolution of AI: A Minimalist Interactive Timeline</strong>
+            </div>
+        </div>
+
+        <!-- OBJECTIVE -->
+        <div id="tab-objective" class="tab-content">
+            <div class="content-label">Why did you create it?</div>
+            <h3 class="content-title">Objective</h3>
+            <div class="content-body">
+                To visually synthesize the foundational milestones, historical hurdles, and modern breakthroughs of artificial intelligence into an accessible, interactive, and responsive web component. The goal was to bridge the gap between complex technological history and user-friendly digital consumption, creating an engaging educational tool that looks pristine on any device.
+            </div>
+        </div>
+
+        <!-- PROCESS -->
+        <div id="tab-process" class="tab-content">
+            <div class="content-label">How did you make it?</div>
+            <h3 class="content-title">Process</h3>
+            <div class="content-body">
+                <ul>
+                    <li><strong>Content Curation:</strong> Extracted, edited, and structured decades of historical AI milestones into distinct eras (from the 1950s to the 2020s).</li>
+                    <li><strong>UI/UX Design:</strong> Conceptualized a modern, high-contrast visual language utilizing a continuous "S-curve" path to intuitively guide the user's eye chronologically through the data.</li>
+                    <li><strong>Development:</strong> Authored clean, semantic HTML and CSS, integrating Google Material Symbols to visually represent each specific technological milestone.</li>
+                    <li><strong>Optimization:</strong> Engineered a custom JavaScript scaling wrapper to ensure the complex, absolute-positioned design remained perfectly responsive. This allowed the timeline to automatically shrink or grow based on the viewport while preserving the exact layout and curved paths.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TOOLS -->
+        <div id="tab-tools" class="tab-content">
+            <div class="content-label">Tech Used</div>
+            <h3 class="content-title">Tools & Technologies</h3>
+            <div class="content-body">
+                <div class="tools-wrapper">
+                    <div class="tool-pill"><span class="material-icons">code</span> HTML5</div>
+                    <div class="tool-pill"><span class="material-icons">css</span> CSS3</div>
+                    <div class="tool-pill"><span class="material-icons">javascript</span> JavaScript (Vanilla)</div>
+                    <div class="tool-pill"><span class="material-icons">interests</span> Google Material Symbols</div>
+                    <div class="tool-pill"><span class="material-icons">text_fields</span> Google Fonts (Inter)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- VALUE -->
+        <div id="tab-value" class="tab-content">
+            <div class="content-label">Artifact-Specific Value Proposition</div>
+            <h3 class="content-title">Value Delivered</h3>
+            <div class="content-body">
+                This artifact demonstrates the ability to translate dense, data-heavy information into an engaging, front-end component. It highlights a strong command of modern UI/UX design principles, complex CSS positioning, and dynamic JavaScript scaling techniques to ensure strict cross-platform fidelity without sacrificing visual quality.
+            </div>
+        </div>
+
     </div>
 
 </div>
+
+<!-- JavaScript for Tab Functionality -->
+<script>
+    function openTab(evt, tabId) {
+        // Hide all elements with class="tab-content"
+        const tabContent = document.getElementsByClassName("tab-content");
+        for (let i = 0; i < tabContent.length; i++) {
+            tabContent[i].classList.remove("active");
+        }
+
+        // Remove the class "active" from all elements with class="tab-btn"
+        const tabBtns = document.getElementsByClassName("tab-btn");
+        for (let i = 0; i < tabBtns.length; i++) {
+            tabBtns[i].classList.remove("active");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(tabId).classList.add("active");
+        evt.currentTarget.classList.add("active");
+    }
+</script>
 
 </body>
 </html>
