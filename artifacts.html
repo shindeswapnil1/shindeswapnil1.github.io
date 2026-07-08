@@ -32,118 +32,28 @@
         padding: 60px 20px;
     }
 
-    /* --- Navigation Bar & Dropdown --- */
-    .nav-bar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        margin-bottom: 60px;
-        padding-bottom: 20px;
-        border-bottom: 1px solid var(--border-color);
-    }
-
-    .nav-left .name {
-        font-size: 18px;
-        font-weight: 700;
-        letter-spacing: -0.5px;
-        color: var(--text-white);
-        text-decoration: none;
-    }
-
-    .nav-right {
-        display: flex;
-        align-items: center;
-        gap: 25px;
-    }
-
-    .nav-link {
-        font-size: 14px;
-        color: var(--text-grey);
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        transition: color 0.2s;
-    }
-
-    .nav-link:hover, .nav-link.active {
-        color: var(--text-white);
-    }
-
-					  
-    .dropdown {
-        position: relative;
-        display: inline-block;
-    }
-
-    .dropdown-menu {
-        visibility: hidden;
-        position: absolute;
-        top: 100%;
-        right: -10px;
-        background-color: var(--card-bg);
-        min-width: 220px;
-        box-shadow: 0 15px 30px rgba(0,0,0,0.8);
-        border: 1px solid var(--border-color);
-        border-radius: 10px;
-        z-index: 100;
-        padding: 10px 0;
-        opacity: 0;
-        transform: translateY(10px);
-        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
-    }
-
-					   
-    .dropdown:hover .dropdown-menu {
-        visibility: visible;
-        opacity: 1;
-        transform: translateY(5px);
-    }
-
-    .dropdown-item {
-        color: var(--text-grey);
-        padding: 10px 20px;
-        text-decoration: none;
-        display: block;
-        font-size: 13px;
-        transition: background 0.2s, color 0.2s;
-    }
-
-    .dropdown-item:hover {
-        background-color: rgba(255,255,255,0.05);
-        color: var(--text-white);
-    }
+    /* --- Unified Navigation Bar --- */
+    .nav-bar { display: flex; justify-content: space-between; align-items: center; width: 100%; margin-bottom: 60px; padding-bottom: 20px; border-bottom: 1px solid var(--border-color); z-index: 10; position: relative;}
+    .nav-left { display: flex; flex-direction: column; }
+    .nav-left .name { font-size: 18px; font-weight: 700; letter-spacing: -0.5px; color: var(--text-white); text-decoration: none; }
+    .nav-left .title { font-size: 12px; color: var(--text-grey); margin-top: 2px; }
+    .nav-center .pill-nav { display: flex; background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-color); padding: 4px; border-radius: 30px; backdrop-filter: blur(10px); }
+    .pill-item { padding: 6px 18px; font-size: 13px; font-weight: 500; color: var(--text-grey); text-decoration: none; border-radius: 20px; transition: all 0.2s ease; }
+    .pill-item:hover, .pill-item.active { background: rgba(255, 255, 255, 0.08); color: var(--text-white); box-shadow: 0 2px 8px rgba(0,0,0,0.4); }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    .nav-link { font-size: 14px; color: var(--text-grey); text-decoration: none; display: flex; align-items: center; gap: 5px; transition: color 0.2s; }
+    .nav-link:hover, .nav-link.active { color: var(--text-white); }
+    .dropdown { position: relative; display: inline-block; }
+    .dropdown-menu { visibility: hidden; position: absolute; top: 100%; right: -10px; background-color: var(--card-bg); min-width: 220px; box-shadow: 0 15px 30px rgba(0,0,0,0.8); border: 1px solid var(--border-color); border-radius: 10px; z-index: 100; padding: 10px 0; opacity: 0; transform: translateY(10px); transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s; }
+    .dropdown:hover .dropdown-menu { visibility: visible; opacity: 1; transform: translateY(5px); }
+    .dropdown-item { color: var(--text-grey); padding: 10px 20px; text-decoration: none; display: block; font-size: 13px; transition: background 0.2s, color 0.2s; }
+    .dropdown-item:hover { background-color: rgba(255,255,255,0.05); color: var(--text-white); }
 
     /* --- Page Header --- */
-    .page-header {
-        margin-bottom: 50px;
-    }
-
-    .page-title {
-        font-size: 42px;
-        font-weight: 400;
-        letter-spacing: -1px;
-        margin: 0 0 10px 0;
-    }
-
-    .page-title em {
-        font-family: 'Cormorant Garamond', Georgia, serif;
-        font-style: italic;
-        font-weight: 600;
-    }
-
-    .page-subtitle {
-        color: var(--text-grey);
-        font-size: 16px;
-    }
-
-										
-					 
-					  
-																	 
-				  
-	 
+    .page-header { margin-bottom: 50px; }
+    .page-title { font-size: 42px; font-weight: 400; letter-spacing: -1px; margin: 0 0 10px 0; }
+    .page-title em { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 600; }
+    .page-subtitle { color: var(--text-grey); font-size: 16px; }
 
     /* --- Tab Pane Container --- */
     .tab-pane-container {
@@ -153,10 +63,6 @@
         border-radius: 12px;
         overflow: hidden;
         box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-					  
-							   
-																														 
-						
     }
 
     .tab-header {
@@ -166,127 +72,40 @@
         overflow-x: auto; 
         scrollbar-width: none; 
     }
-    
-    .tab-header::-webkit-scrollbar { 
-        display: none; 
-    }
+    .tab-header::-webkit-scrollbar { display: none; }
 
     .tab-btn {
-        background: transparent;
-        border: none;
-        outline: none;
-        color: var(--text-grey);
-        padding: 18px 24px;
-        font-size: 13px;
-        font-weight: 600;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        border-bottom: 2px solid transparent;
-        white-space: nowrap;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-							
+        background: transparent; border: none; outline: none;
+        color: var(--text-grey); padding: 18px 24px; font-size: 13px;
+        font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+        cursor: pointer; transition: all 0.3s ease;
+        border-bottom: 2px solid transparent; white-space: nowrap;
+        display: flex; align-items: center; gap: 8px;
     }
-
-    .tab-btn:hover {
-        background-color: var(--hover-bg);
-        color: var(--text-white);
-						
-    }
-
-    .tab-btn.active {
-						
-						 
-        color: var(--text-white);
-        border-bottom: 2px solid var(--primary-accent);
-        background-color: transparent;
-    }
-
-    .tab-btn .material-icons {
-        font-size: 16px;
-								
-						 
-				  
-					 
-    }
+    .tab-btn:hover { background-color: var(--hover-bg); color: var(--text-white); }
+    .tab-btn.active { color: var(--text-white); border-bottom: 2px solid var(--primary-accent); background-color: transparent; }
+    .tab-btn .material-icons { font-size: 16px; }
 
     /* --- Tab Content --- */
-    .tab-content {
-        display: none;
-        padding: 40px;
-        animation: fadeIn 0.4s ease-in-out;
-    }
-
-    .tab-content.active {
-        display: block;
-    }
-
+    .tab-content { display: none; padding: 40px; animation: fadeIn 0.4s ease-in-out; }
+    .tab-content.active { display: block; }
     @keyframes fadeIn {
         from { opacity: 0; transform: translateY(5px); }
         to { opacity: 1; transform: translateY(0); }
     }
 
-    .content-label {
-        font-size: 12px;
-        color: var(--text-grey);
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-        margin-bottom: 8px;
-        font-weight: 600;
-    }
+    .content-label { font-size: 12px; color: var(--text-grey); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; font-weight: 600; }
+    .content-title { font-size: 24px; font-weight: 700; margin: 0 0 20px 0; letter-spacing: -0.5px; }
+    .content-body { font-size: 15px; color: #d1d1d6; line-height: 1.7; }
+    .content-body ul { margin: 0; padding-left: 20px; }
+    .content-body li { margin-bottom: 12px; }
 
-    .content-title {
-        font-size: 24px;
-        font-weight: 700;
-        margin: 0 0 20px 0;
-        letter-spacing: -0.5px;
-    }
-
-    .content-body {
-        font-size: 15px;
-        color: #d1d1d6;
-        line-height: 1.7;
-    }
-
-    .content-body ul {
-        margin: 0;
-        padding-left: 20px;
-    }
-
-    .content-body li {
-        margin-bottom: 12px;
-    }
-
-    .tools-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 15px;
-    }
-
-    .tool-pill {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid var(--border-color);
-        color: var(--text-white);
-        padding: 8px 16px;
-        border-radius: 20px;
-        font-size: 13px;
-        font-weight: 500;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-    }
+    .tools-wrapper { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+    .tool-pill { background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); color: var(--text-white); padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 6px; }
 
     @media (max-width: 600px) {
-        .tab-content {
-            padding: 25px;
-        }
-        .tab-btn {
-            padding: 15px 20px;
-        }
+        .tab-content { padding: 25px; }
+        .tab-btn { padding: 15px 20px; }
     }
 </style>
 </head>
@@ -296,45 +115,26 @@
     
    <div id="nav-placeholder"></div>
 
-    <!-- Header -->
     <header class="page-header">
         <h1 class="page-title">Artifact <em>Details</em>.</h1>
         <p class="page-subtitle">Deep dive into the strategy, process, and execution of specific deliverables.</p>
     </header>
 
-    <!-- Tab Pane Section -->
     <div class="tab-pane-container">
         
-        <!-- Tab Navigation -->
         <div class="tab-header">
-            <button class="tab-btn active" onclick="openTab(event, 'tab-title')">
-                <span class="material-icons">title</span> Title
-            </button>
-            <button class="tab-btn" onclick="openTab(event, 'tab-objective')">
-                <span class="material-icons">track_changes</span> Objective
-            </button>
-            <button class="tab-btn" onclick="openTab(event, 'tab-process')">
-                <span class="material-icons">account_tree</span> Process
-            </button>
-            <button class="tab-btn" onclick="openTab(event, 'tab-tools')">
-                <span class="material-icons">build</span> Tools
-            </button>
-            <button class="tab-btn" onclick="openTab(event, 'tab-value')">
-                <span class="material-icons">diamond</span> Value
-            </button>
+            <button class="tab-btn active" onclick="openTab(event, 'tab-title')"><span class="material-icons">title</span> Title</button>
+            <button class="tab-btn" onclick="openTab(event, 'tab-objective')"><span class="material-icons">track_changes</span> Objective</button>
+            <button class="tab-btn" onclick="openTab(event, 'tab-process')"><span class="material-icons">account_tree</span> Process</button>
+            <button class="tab-btn" onclick="openTab(event, 'tab-tools')"><span class="material-icons">build</span> Tools</button>
+            <button class="tab-btn" onclick="openTab(event, 'tab-value')"><span class="material-icons">diamond</span> Value</button>
         </div>
 
-        <!-- Tab Contents -->
-        
-        <!-- TITLE -->
         <div id="tab-title" class="tab-content active">
             <div class="content-label">What is it?</div>
-            <div class="content-body">
-                <strong>The Evolution of AI: A Minimalist Interactive Timeline</strong>
-            </div>
+            <div class="content-body"><strong>The Evolution of AI: A Minimalist Interactive Timeline</strong></div>
         </div>
 
-        <!-- OBJECTIVE -->
         <div id="tab-objective" class="tab-content">
             <div class="content-label">Why did you create it?</div>
             <div class="content-body">
@@ -342,7 +142,6 @@
             </div>
         </div>
 
-        <!-- PROCESS -->
         <div id="tab-process" class="tab-content">
             <div class="content-label">How did you make it?</div>
             <div class="content-body">
@@ -355,7 +154,6 @@
             </div>
         </div>
 
-        <!-- TOOLS -->
         <div id="tab-tools" class="tab-content">
             <div class="content-label">Tech Used</div>
             <div class="content-body">
@@ -369,7 +167,6 @@
             </div>
         </div>
 
-        <!-- VALUE -->
         <div id="tab-value" class="tab-content">
             <div class="content-label">Artifact-Specific Value Proposition</div>
             <div class="content-body">
@@ -381,38 +178,24 @@
 
 </div>
 
-<!-- JavaScript for Tab Functionality -->
 <script>
     function openTab(evt, tabId) {
-        // Hide all elements with class="tab-content"
         const tabContent = document.getElementsByClassName("tab-content");
-        for (let i = 0; i < tabContent.length; i++) {
-            tabContent[i].classList.remove("active");
-        }
-
-        // Remove the class "active" from all elements with class="tab-btn"
+        for (let i = 0; i < tabContent.length; i++) tabContent[i].classList.remove("active");
         const tabBtns = document.getElementsByClassName("tab-btn");
-        for (let i = 0; i < tabBtns.length; i++) {
-            tabBtns[i].classList.remove("active");
-        }
-
-        // Show the current tab, and add an "active" class to the button that opened the tab
+        for (let i = 0; i < tabBtns.length; i++) tabBtns[i].classList.remove("active");
         document.getElementById(tabId).classList.add("active");
         evt.currentTarget.classList.add("active");
     }
 </script>
-<!-- Script to load the Navbar and highlight the active link -->
+
 <script>
     fetch('navbar.html')
     .then(response => response.text())
     .then(data => {
-        // Inject the navbar HTML into the placeholder
         document.getElementById('nav-placeholder').innerHTML = data;
-        
-        // Smart routing to highlight the active tab
         let currentUrl = window.location.pathname.split('/').pop() || 'index.html';
         let navLinks = document.querySelectorAll('.nav-link');
-        
         navLinks.forEach(link => {
             if (link.getAttribute('href') === currentUrl) {
                 link.classList.add('active');
