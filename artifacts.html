@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swapnil Shinde - Artifacts</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+    :root {
+        --bg-black: #0d0d0e;
+        --card-bg: #131315;
+        --border-color: #222224;
+        --text-white: #ffffff;
+        --text-grey: #8e8e93;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: var(--bg-black);
+        font-family: 'Inter', sans-serif;
+        color: var(--text-white);
+        line-height: 1.6;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 60px 20px;
+    }
+
+    /* --- Navigation Bar & Dropdown --- */
+    .nav-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 60px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-left .name {
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        color: var(--text-white);
+        text-decoration: none;
+    }
+
+    .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .nav-link {
+        font-size: 14px;
+        color: var(--text-grey);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        transition: color 0.2s;
+    }
+
+    .nav-link:hover, .nav-link.active {
+        color: var(--text-white);
+    }
+
+    /* Dropdown CSS */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-menu {
+        visibility: hidden;
+        position: absolute;
+        top: 100%;
+        right: -10px;
+        background-color: var(--card-bg);
+        min-width: 220px;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.8);
+        border: 1px solid var(--border-color);
+        border-radius: 10px;
+        z-index: 100;
+        padding: 10px 0;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+    }
+
+    /* Hover trigger */
+    .dropdown:hover .dropdown-menu {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(5px);
+    }
+
+    .dropdown-item {
+        color: var(--text-grey);
+        padding: 10px 20px;
+        text-decoration: none;
+        display: block;
+        font-size: 13px;
+        transition: background 0.2s, color 0.2s;
+    }
+
+    .dropdown-item:hover {
+        background-color: rgba(255,255,255,0.05);
+        color: var(--text-white);
+    }
+
+    /* --- Page Header --- */
+    .page-header {
+        margin-bottom: 50px;
+    }
+
+    .page-title {
+        font-size: 42px;
+        font-weight: 400;
+        letter-spacing: -1px;
+        margin: 0 0 10px 0;
+    }
+
+    .page-title em {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-style: italic;
+        font-weight: 600;
+    }
+
+    .page-subtitle {
+        color: var(--text-grey);
+        font-size: 16px;
+    }
+
+    /* --- Artifacts Grid (Tiles) --- */
+    .artifacts-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 25px;
+    }
+
+    .tile {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 30px;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s;
+        cursor: pointer;
+    }
+
+    .tile:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        border-color: rgba(255,255,255,0.2);
+    }
+
+    .tile-icon {
+        width: 40px;
+        height: 40px;
+        background: rgba(255,255,255,0.05);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .tile-icon .material-icons {
+        color: var(--text-white);
+        font-size: 20px;
+    }
+
+    .tile-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--text-white);
+        margin: 0 0 10px 0;
+        letter-spacing: -0.5px;
+    }
+
+    .tile-desc {
+        font-size: 14px;
+        color: var(--text-grey);
+        line-height: 1.5;
+        margin: 0;
+        flex-grow: 1;
+    }
+    
+    .tile-footer {
+        margin-top: 20px;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #555;
+        font-weight: 600;
+    }
+
+    @media (max-width: 600px) {
+        .artifacts-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    
+    <!-- Top Navigation with Hover Dropdown -->
+    <nav class="nav-bar">
+        <div class="nav-left">
+            <a href="index.html" class="name">Swapnil Shinde</a>
+        </div>
+        <div class="nav-right">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="experience.html" class="nav-link">Experience</a>
+            
+            <!-- Dropdown Container -->
+            <div class="dropdown">
+                <!-- Clicking this main link takes you to the artifacts page -->
+                <a href="artifacts.html" class="nav-link active">
+                    Artifacts <span class="material-icons" style="font-size:16px;">keyboard_arrow_down</span>
+                </a>
+                
+                <!-- Hovering reveals this menu -->
+                <div class="dropdown-menu">
+                    <a href="artifact1.html" class="dropdown-item">artifact1</a>
+                    <!--<a href="#" class="dropdown-item">artifact1</a>
+                    <a href="#" class="dropdown-item">artifact1</a>
+                    <a href="#" class="dropdown-item">artifact1</a>-->
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="page-header">
+        <h1 class="page-title">Project <em>Artifacts</em>.</h1>
+        <p class="page-subtitle">A curated collection of deliverables, strategies, and system architectures.</p>
+    </header>
+
+    <!-- Artifacts Tile Grid -->
+    <div class="artifacts-grid">
+        
+        <a href="#" class="tile">
+            <div class="tile-icon"><span class="material-icons">account_tree</span></div>
+            <h3 class="tile-title">Enterprise System Architecture</h3>
+            <p class="tile-desc">Strategic blueprints addressing misalignment between business strategy and technology execution to improve operational throughput.[cite: 1]</p>
+            <div class="tile-footer">Trimble Inc.</div>
+        </a>
+
+        <a href="#" class="tile">
+            <div class="tile-icon"><span class="material-icons">storage</span></div>
+            <h3 class="tile-title">Data Cleansing & Migration Protocols</h3>
+            <p class="tile-desc">Complex validation and processing workflows designed to eliminate data integrity risks and improve accuracy during system upgrades.[cite: 1]</p>
+            <div class="tile-footer">Trimble Inc.</div>
+        </a>
+
+        <a href="#" class="tile">
+            <div class="tile-icon"><span class="material-icons">fact_check</span></div>
+            <h3 class="tile-title">UAT & Quality Assurance Strategy</h3>
+            <p class="tile-desc">Comprehensive test plans, acceptance criteria, and defect triage processes used to reduce production defects across multiple releases.[cite: 1]</p>
+            <div class="tile-footer">Trimble Inc.</div>
+        </a>
+
+        <a href="#" class="tile">
+            <div class="tile-icon"><span class="material-icons">query_stats</span></div>
+            <h3 class="tile-title">High-Availability Monitoring Framework</h3>
+            <p class="tile-desc">System recovery and backup frameworks engineered to reduce MTTR and lower severity-1 incidents in mission-critical applications.[cite: 1]</p>
+            <div class="tile-footer">Vistaar Technologies</div>
+        </a>
+
+        <a href="#" class="tile">
+            <div class="tile-icon"><span class="material-icons">rocket_launch</span></div>
+            <h3 class="tile-title">Deployment & Release Standardization</h3>
+            <p class="tile-desc">Standardized release processes coordinating development, infrastructure, and QA to reduce deployment errors.[cite: 1]</p>
+            <div class="tile-footer">Vistaar Technologies</div>
+        </a>
+
+        <a href="#" class="tile">
+            <div class="tile-icon"><span class="material-icons">language</span></div>
+            <h3 class="tile-title">Performance-Optimized Web Solutions</h3>
+            <p class="tile-desc">User-centric web solutions translated from ambiguous business needs, focused on improving session duration and page load speeds.[cite: 1]</p>
+            <div class="tile-footer">Freelance</div>
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
