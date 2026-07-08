@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swapnil Shinde - Experience</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+    :root {
+        --bg-black: #0d0d0e;
+        --card-bg: #131315;
+        --border-color: #222224;
+        --text-white: #ffffff;
+        --text-grey: #8e8e93;
+        --accent-glow: rgba(255, 255, 255, 0.1);
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: var(--bg-black);
+        font-family: 'Inter', sans-serif;
+        color: var(--text-white);
+        line-height: 1.6;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 60px 20px;
+    }
+
+    /* --- Navigation Bar --- */
+    .nav-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 60px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-left .name {
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        color: var(--text-white);
+        text-decoration: none;
+    }
+
+    .nav-right {
+        display: flex;
+        gap: 20px;
+    }
+
+    .nav-link {
+        font-size: 14px;
+        color: var(--text-grey);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        transition: color 0.2s;
+    }
+
+    .nav-link:hover, .nav-link.active {
+        color: var(--text-white);
+    }
+
+    /* --- Page Header --- */
+    .page-header {
+        margin-bottom: 60px;
+        text-align: center;
+    }
+
+    .page-title {
+        font-size: 48px;
+        font-weight: 400;
+        letter-spacing: -1.5px;
+        margin: 0 0 15px 0;
+    }
+
+    .page-title em {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-style: italic;
+        font-weight: 600;
+        color: var(--text-white);
+    }
+
+    .page-subtitle {
+        font-size: 16px;
+        color: var(--text-grey);
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    /* --- Timeline Layout --- */
+    .timeline {
+        position: relative;
+        padding-left: 40px;
+    }
+
+    /* The vertical line */
+    .timeline::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1px;
+        height: 100%;
+        background: var(--border-color);
+    }
+
+    .timeline-item {
+        position: relative;
+        margin-bottom: 60px;
+    }
+
+    /* The timeline dot */
+    .timeline-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -44.5px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--bg-black);
+        border: 2px solid var(--text-grey);
+        transition: all 0.3s ease;
+    }
+
+    .timeline-item.current::before {
+        border-color: var(--text-white);
+        background: var(--text-white);
+        box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
+    }
+
+    /* --- Experience Cards --- */
+    .exp-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 40px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .exp-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        border-color: rgba(255,255,255,0.1);
+    }
+
+    .exp-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .role-title {
+        font-size: 22px;
+        font-weight: 700;
+        margin: 0 0 5px 0;
+        letter-spacing: -0.5px;
+    }
+
+    .company-name {
+        font-size: 16px;
+        color: var(--text-grey);
+        font-weight: 500;
+    }
+
+    .date-badge {
+        font-size: 13px;
+        color: var(--text-white);
+        background: rgba(255,255,255,0.08);
+        padding: 6px 14px;
+        border-radius: 20px;
+        border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .exp-body ul {
+        margin: 0;
+        padding-left: 20px;
+        color: #d1d1d6;
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .exp-body li {
+        margin-bottom: 12px;
+    }
+
+    .exp-body li:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+        .exp-card {
+            padding: 25px;
+        }
+        .timeline {
+            padding-left: 30px;
+        }
+        .timeline-item::before {
+            left: -34.5px;
+        }
+        .page-title {
+            font-size: 36px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    
+    <!-- Top Navigation -->
+    <nav class="nav-bar">
+        <div class="nav-left">
+            <a href="index.html" class="name">Swapnil Shinde</a>
+        </div>
+        <div class="nav-right">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="experience.html" class="nav-link active">Experience</a>
+            <a href="resume.html" class="nav-link">Resume</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="page-header">
+        <h1 class="page-title">Career <em>Journey</em>.</h1>
+        <p class="page-subtitle">Bridging the gap between complex business needs and technical execution across global tech enterprises.</p>
+    </header>
+
+    <!-- Timeline Container -->
+    <div class="timeline">
+        
+        <!-- Trimble Inc. (Current) -->
+        <div class="timeline-item current">
+            <div class="exp-card">
+                <div class="exp-header">
+                    <div>
+                        <h3 class="role-title">Senior Business Analyst[cite: 1]</h3>
+                        <div class="company-name">Trimble Inc. | Dayton, Ohio[cite: 1]</div>
+                    </div>
+                    <div class="date-badge">Jan 2023 - Present[cite: 1]</div>
+                </div>
+                <div class="exp-body">
+                    <ul>
+                        <li>Architected enterprise-wide system and process transformation initiatives to resolve misalignment between business strategy and technology execution, driving ~30% reduction in manual effort and materially improving operational throughput.[cite: 1]</li>
+                        <li>Spearheaded cross-functional requirements and solution design workshops with product, engineering, operations, and leadership stakeholders; translated ambiguous business needs into clear functional and technical roadmaps, accelerating delivery timelines by ~20%.[cite: 1]</li>
+                        <li>Orchestrated end-to-end delivery of complex platform initiatives, owning scope, dependencies, risks, and release readiness; successfully supported systems used by 500+ internal users with high adoption and minimal post-launch issues.[cite: 1]</li>
+                        <li>Engineered remediation of systemic data quality and throughput risks by diagnosing root causes in legacy system logic; redesigned validation and processing workflows, improving data accuracy by ~40% and restoring executive trust in reporting.[cite: 1]</li>
+                        <li>Directed UAT and quality assurance strategy across multiple releases, defining test plans, acceptance criteria, and defect triage processes; reduced production defects by ~35% through early risk identification and disciplined testing execution.[cite: 1]</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vistaar Technologies -->
+        <div class="timeline-item">
+            <div class="exp-card">
+                <div class="exp-header">
+                    <div>
+                        <h3 class="role-title">Senior Software Engineer[cite: 1]</h3>
+                        <div class="company-name">Vistaar Technologies | Mumbai Area, India[cite: 1]</div>
+                    </div>
+                    <div class="date-badge">Aug 2015 - Dec 2022[cite: 1]</div>
+                </div>
+                <div class="exp-body">
+                    <ul>
+                        <li>Spearheaded delivery of mission-critical applications where reliability and uptime were business-critical; architected high-availability solutions that improved system uptime to 99.9%+ and minimized customer-impacting incidents.[cite: 1]</li>
+                        <li>Owned end-to-end execution of multiple concurrent projects amid evolving requirements and tight timelines; introduced structured planning and dependency management, resulting in consistent on-time delivery and improved release predictability.[cite: 1]</li>
+                        <li>Engineered system monitoring, recovery, and backup frameworks to address recurring production issues; reduced mean time to recovery (MTTR) by ~40% and significantly lowered severity-1 incidents.[cite: 1]</li>
+                        <li>Led large-scale deployments and production releases, coordinating development, infrastructure, QA, and client stakeholders; standardized release processes, reducing deployment errors by ~30%.[cite: 1]</li>
+                        <li>Improved development quality and velocity by introducing code review standards, debugging practices, and defect prevention techniques; lowered post-release defects by ~35% while maintaining delivery speed.[cite: 1]</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Freelance -->
+        <div class="timeline-item">
+            <div class="exp-card">
+                <div class="exp-header">
+                    <div>
+                        <h3 class="role-title">Web & Digital Solutions Consultant[cite: 1]</h3>
+                        <div class="company-name">Freelance | Mumbai, Maharashtra, India[cite: 1]</div>
+                    </div>
+                    <div class="date-badge">May 2013 - Jun 2018[cite: 1]</div>
+                </div>
+                <div class="exp-body">
+                    <ul>
+                        <li>Led end-to-end delivery of client web projects by translating ambiguous business needs into clear functional requirements, delivery roadmaps, and technical milestones—achieving 100% on-time delivery across all engagements.[cite: 1]</li>
+                        <li>Designed and delivered performance-optimized, user-centric web solutions aligned with client KPIs, improving average page load speed by 35-50% and increasing user engagement metrics.[cite: 1]</li>
+                        <li>Acted as the single point of accountability for delivery quality, change management, and issue resolution—reducing rework cycles by 30% through proactive planning and validation.[cite: 1]</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
