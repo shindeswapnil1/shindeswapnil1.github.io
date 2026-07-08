@@ -16,7 +16,6 @@
         
         /* Timeline specific overrides to match theme */
         --path-color: #333336;
-        --era-bg: #1c1c1e;
     }
 
     body {
@@ -107,18 +106,58 @@
         gap: 20px;
     }
 
+    /* --- LIQUID GLASS PILLS --- */
     .era-pill {
-        padding: 6px 20px;
-        border-radius: 20px;
+        padding: 8px 20px;
+        border-radius: 30px;
         font-size: 13px;
-        font-weight: 700;
+        font-weight: 800;
         text-align: center;
         text-transform: uppercase;
-        background-color: var(--era-bg);
-        border: 1px solid var(--border-color);
+        letter-spacing: 1px;
         color: var(--text-white);
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
     }
 
+    /* Animated Liquid Reflection */
+    .era-pill::after {
+        content: '';
+        position: absolute;
+        top: 0; 
+        left: -150%;
+        width: 50%; 
+        height: 100%;
+        background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+        transform: skewX(-25deg);
+        animation: liquid-shine 5s infinite;
+    }
+
+    @keyframes liquid-shine {
+        0% { left: -150%; }
+        20% { left: 250%; }
+        100% { left: 250%; }
+    }
+
+    /* Standard Era: Glowing Neon Purple Glass */
+    .glass-standard {
+        background: linear-gradient(135deg, rgba(187, 134, 252, 0.2), rgba(187, 134, 252, 0.05));
+        border: 1px solid rgba(187, 134, 252, 0.4);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4), inset 0 1px 2px rgba(187, 134, 252, 0.5);
+        text-shadow: 0 0 8px rgba(187, 134, 252, 0.8);
+    }
+
+    /* AI Winter Era: Frosty Icy Cyan Glass */
+    .glass-winter {
+        background: linear-gradient(135deg, rgba(0, 229, 255, 0.2), rgba(0, 229, 255, 0.05));
+        border: 1px solid rgba(0, 229, 255, 0.4);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4), inset 0 1px 2px rgba(0, 229, 255, 0.5);
+        text-shadow: 0 0 8px rgba(0, 229, 255, 0.8);
+    }
+
+    /* --- Nodes --- */
     .nodes-container {
         display: flex;
         justify-content: space-between;
@@ -204,9 +243,9 @@
             <!-- ROW 1 -->
             <div class="row row-1">
                 <div class="era-headers">
-                    <div class="era-pill" style="width: 50%;">1950s-1960s: THE BIRTH OF AI</div>
-                    <div class="era-pill" style="width: 20%;">1970s: THE RISE OF AI</div>
-                    <div class="era-pill" style="width: 20%;">1974-1980s: THE FIRST AI WINTER</div>
+                    <div class="era-pill glass-standard" style="width: 50%;">1950s-1960s: THE BIRTH OF AI</div>
+                    <div class="era-pill glass-standard" style="width: 20%;">1970s: THE RISE OF AI</div>
+                    <div class="era-pill glass-winter" style="width: 20%;">1974-1980s: THE FIRST AI WINTER</div>
                 </div>
                 <div class="nodes-container">
                     <div class="node">
@@ -260,8 +299,8 @@
             <!-- ROW 2 -->
             <div class="row row-2">
                 <div class="era-headers">
-                    <div class="era-pill" style="width: 40%;">LATE 1980s-1990s: THE SECOND AI WINTER</div>
-                    <div class="era-pill" style="width: 45%;">1980s: SIGNIFICANT ACHIEVEMENTS</div>
+                    <div class="era-pill glass-winter" style="width: 40%;">LATE 1980s-1990s: THE SECOND AI WINTER</div>
+                    <div class="era-pill glass-standard" style="width: 45%;">1980s: SIGNIFICANT ACHIEVEMENTS</div>
                 </div>
                 <div class="nodes-container" style="justify-content: flex-start; gap: 90px; padding-left: 10px;">
                     <div class="node">
@@ -300,8 +339,8 @@
             <!-- ROW 3 -->
             <div class="row row-3">
                 <div class="era-headers">
-                    <div class="era-pill" style="width: 55%;">2000-2017: RESURGENCE OF AI</div>
-                    <div class="era-pill" style="width: 40%;">2018-2026: CLOUD COMPUTING AND LLMs</div>
+                    <div class="era-pill glass-standard" style="width: 55%;">2000-2017: RESURGENCE OF AI</div>
+                    <div class="era-pill glass-standard" style="width: 40%;">2018-2026: CLOUD COMPUTING AND LLMs</div>
                 </div>
                 <div class="nodes-container">
                     <div class="node">
