@@ -125,7 +125,7 @@ body {
 .era-headers { display: flex; justify-content: space-between; position: absolute; top: 20px; left: 30px; right: 30px; gap: 20px; }
 
 /* Liquid Glass Pills */
-.era-pill { padding: 8px 20px; border-radius: 30px; font-size: 13px; font-weight: 800; text-align: center; text-transform: uppercase; letter-spacing: 1px; color: var(--text-white); position: relative; overflow: hidden; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.era-pill { padding: 6px 20px; border-radius: 30px; font-size: 13px; font-weight: 800; text-align: center; text-transform: uppercase;  color: var(--text-white); position: relative; overflow: hidden; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
 .era-pill::after { content: ''; position: absolute; top: 0; left: -150%; width: 50%; height: 100%; background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%); transform: skewX(-25deg); animation: liquid-shine 5s infinite; }
 @keyframes liquid-shine { 0% { left: -150%; } 20% { left: 250%; } 100% { left: 250%; } }
 .glass-standard { background: linear-gradient(135deg, rgba(187, 134, 252, 0.2), rgba(187, 134, 252, 0.05)); border: 1px solid rgba(187, 134, 252, 0.4); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4), inset 0 1px 2px rgba(187, 134, 252, 0.5); text-shadow: 0 0 8px rgba(187, 134, 252, 0.8); }
