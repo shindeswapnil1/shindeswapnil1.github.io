@@ -73,63 +73,85 @@
         </div>
 
     </div>
-    <div class="tab-pane-container">
-    <div id="tab-title" class="tab-content">
-    <div class="content-label">What is it?</div>
-    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; margin-bottom: 20px;">
-        <h3 class="content-title" style="margin: 0;">TuneBot: AI Music Chatbot</h3>
-        <a href="tunebot.html" target="_blank" style="display: flex; align-items: center; gap: 8px; background: var(--primary-accent); color: var(--bg-black); text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 700; transition: opacity 0.2s;">
-            Open TuneBot <span class="material-icons" style="font-size: 16px;">launch</span>
-        </a>
-    </div>
-    <div class="content-body">
-        <strong>An AI-Powered Music Recommendation Chatbot</strong>
-    </div>
-</div>
-
-<div id="tab-objective" class="tab-content">
-    <div class="content-label">Why did you create it?</div>
-    <h3 class="content-title">Objective</h3>
-    <div class="content-body">
-        To build an intelligent, conversational agent capable of parsing natural language to recommend personalized music based on a user's mood, activity, or preferred genre, bridging the gap between complex LLM processing and an intuitive frontend experience.
-    </div>
-</div>
-
-<div id="tab-process" class="tab-content">
-    <div class="content-label">How did you make it?</div>
-    <h3 class="content-title">Process</h3>
-    <div class="content-body">
-        <ul>
-            <li><strong>UI/UX Design:</strong> Engineered a responsive, dark-mode chat interface featuring typing indicators, dynamic suggestion chips, and sleek message bubbling.</li>
-            <li><strong>AI Integration:</strong> Integrated the Pollinations.ai API to process user inputs, utilizing strict prompt engineering to force the model to return structured JSON responses.</li>
-            <li><strong>Data Matching:</strong> Developed a lightweight matching algorithm to link the LLM-parsed intents with a categorized local database of over 50 tracks.</li>
-            <li><strong>Media APIs:</strong> Wired asynchronous chains to the iTunes Search and Song.link APIs to dynamically fetch album art and generate functional Spotify playback embeds directly within the chat stream.</li>
-        </ul>
-    </div>
-</div>
-
-<div id="tab-tools" class="tab-content">
-    <div class="content-label">Tech Used</div>
-    <h3 class="content-title">Tools & Technologies</h3>
-    <div class="content-body">
-        <div class="tools-wrapper">
-            <div class="tool-pill"><span class="material-icons">code</span> HTML5 & CSS3</div>
-            <div class="tool-pill"><span class="material-icons">javascript</span> Vanilla JavaScript</div>
-            <div class="tool-pill"><span class="material-icons">psychology</span> Pollinations.ai (LLM)</div>
-            <div class="tool-pill"><span class="material-icons">api</span> REST APIs (iTunes/Song.link)</div>
-            <div class="tool-pill"><span class="material-icons">data_object</span> JSON</div>
+    
+    <div class="tab-pane-container" style="margin-top: 60px;">
+        
+        <div class="tab-header">
+            <button class="tab-btn active" onclick="openTab(event, 'tunebot-title')">
+                <span class="material-icons">title</span> Title
+            </button>
+            <button class="tab-btn" onclick="openTab(event, 'tunebot-objective')">
+                <span class="material-icons">track_changes</span> Objective
+            </button>
+            <button class="tab-btn" onclick="openTab(event, 'tunebot-process')">
+                <span class="material-icons">account_tree</span> Process
+            </button>
+            <button class="tab-btn" onclick="openTab(event, 'tunebot-tools')">
+                <span class="material-icons">build</span> Tools
+            </button>
+            <button class="tab-btn" onclick="openTab(event, 'tunebot-value')">
+                <span class="material-icons">diamond</span> Value
+            </button>
         </div>
-    </div>
-</div>
 
-<div id="tab-value" class="tab-content">
-    <div class="content-label">Artifact-Specific Value Proposition</div>
-    <h3 class="content-title">Value Delivered</h3>
-    <div class="content-body">
-        This artifact demonstrates strong capabilities in modern frontend development and API orchestration. It highlights the ability to seamlessly integrate third-party Large Language Models (LLMs) into a user interface, handle complex asynchronous data fetching, and utilize prompt engineering to turn unstructured human conversation into actionable, structured data.
+        <div id="tunebot-title" class="tab-content active">
+            <div class="content-label">What is it?</div>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; margin-bottom: 20px;">
+                <h3 class="content-title" style="margin: 0;">TuneBot: AI Music Chatbot</h3>
+                <a href="tunebot.html" target="_blank" style="display: flex; align-items: center; gap: 8px; background: var(--primary-accent); color: var(--bg-black); text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 700; transition: opacity 0.2s;">
+                    Open TuneBot <span class="material-icons" style="font-size: 16px;">launch</span>
+                </a>
+            </div>
+            <div class="content-body">
+                <strong>An AI-Powered Music Recommendation Chatbot</strong>
+            </div>
+        </div>
+
+        <div id="tunebot-objective" class="tab-content">
+            <div class="content-label">Why did you create it?</div>
+            <h3 class="content-title">Objective</h3>
+            <div class="content-body">
+                To build an intelligent, conversational agent capable of parsing natural language to recommend personalized music based on a user's mood, activity, or preferred genre, bridging the gap between complex LLM processing and an intuitive frontend experience.
+            </div>
+        </div>
+
+        <div id="tunebot-process" class="tab-content">
+            <div class="content-label">How did you make it?</div>
+            <h3 class="content-title">Process</h3>
+            <div class="content-body">
+                <ul>
+                    <li><strong>UI/UX Design:</strong> Engineered a responsive, dark-mode chat interface featuring typing indicators, dynamic suggestion chips, and sleek message bubbling.</li>
+                    <li><strong>AI Integration:</strong> Integrated the Pollinations.ai API to process user inputs, utilizing strict prompt engineering to force the model to return structured JSON responses.</li>
+                    <li><strong>Data Matching:</strong> Developed a lightweight matching algorithm to link the LLM-parsed intents with a categorized local database of over 50 tracks.</li>
+                    <li><strong>Media APIs:</strong> Wired asynchronous chains to the iTunes Search and Song.link APIs to dynamically fetch album art and generate functional Spotify playback embeds directly within the chat stream.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="tunebot-tools" class="tab-content">
+            <div class="content-label">Tech Used</div>
+            <h3 class="content-title">Tools & Technologies</h3>
+            <div class="content-body">
+                <div class="tools-wrapper">
+                    <div class="tool-pill"><span class="material-icons">code</span> HTML5 & CSS3</div>
+                    <div class="tool-pill"><span class="material-icons">javascript</span> Vanilla JavaScript</div>
+                    <div class="tool-pill"><span class="material-icons">psychology</span> Pollinations.ai (LLM)</div>
+                    <div class="tool-pill"><span class="material-icons">api</span> REST APIs</div>
+                    <div class="tool-pill"><span class="material-icons">data_object</span> JSON</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tunebot-value" class="tab-content">
+            <div class="content-label">Artifact-Specific Value Proposition</div>
+            <h3 class="content-title">Value Delivered</h3>
+            <div class="content-body">
+                This artifact demonstrates strong capabilities in modern frontend development and API orchestration. It highlights the ability to seamlessly integrate third-party Large Language Models (LLMs) into a user interface, handle complex asynchronous data fetching, and utilize prompt engineering to turn unstructured human conversation into actionable, structured data.
+            </div>
+        </div>
+
     </div>
-</div>
-</div>
+
 </div>
 
 </body>
