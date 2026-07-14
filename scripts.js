@@ -46,20 +46,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 3. Artifact Details Tab Logic
     window.openTab = function(evt, tabId) {
-        const tabContent = document.getElementsByClassName("tab-content");
+        // Find the specific container the user clicked inside
+        const container = evt.currentTarget.closest('.tab-pane-container');
+        
+        // Hide all tab content inside THIS specific container
+        const tabContent = container.getElementsByClassName("tab-content");
         for (let i = 0; i < tabContent.length; i++) {
             tabContent[i].classList.remove("active");
         }
 
-        const tabBtns = document.getElementsByClassName("tab-btn");
+        // Remove the "active" class from all buttons inside THIS specific container
+        const tabBtns = container.getElementsByClassName("tab-btn");
         for (let i = 0; i < tabBtns.length; i++) {
             tabBtns[i].classList.remove("active");
         }
 
+        // Show the current tab, and highlight the clicked button
         document.getElementById(tabId).classList.add("active");
         evt.currentTarget.classList.add("active");
     };
-});
 /* =========================================
    TUNEBOT CHATBOT LOGIC 
    ========================================= */
