@@ -65,6 +65,14 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById(tabId).classList.add("active");
         evt.currentTarget.classList.add("active");
     };
+    // Automatically open the first tab of EVERY tab pane on page load
+    const tabPanes = document.querySelectorAll('.tab-pane-container');
+    tabPanes.forEach(pane => {
+        const firstTabBtn = pane.querySelector('.tab-btn');
+        if (firstTabBtn) {
+            firstTabBtn.click();
+        }
+    });
 /* =========================================
    TUNEBOT CHATBOT LOGIC 
    ========================================= */
