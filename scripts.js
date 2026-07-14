@@ -45,10 +45,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // 3. Artifact Details Tab Logic
+    // 3. Artifact Details Tab Logic (Robust Version)
     window.openTab = function(evt, tabId) {
+        // Safely capture the button, even during automated/synthetic clicks
+        const btn = evt.currentTarget || (evt.target ? evt.target.closest('.tab-btn') : null);
+        if (!btn) return;
+
         // Find the specific container the user clicked inside
-        const container = evt.currentTarget.closest('.tab-pane-container');
-        
+        const container = btn.closest('.tab-pane-container');
+        if (!container) return;
+
         // Hide all tab content inside THIS specific container
         const tabContent = container.getElementsByClassName("tab-content");
         for (let i = 0; i < tabContent.length; i++) {
@@ -62,8 +68,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // Show the current tab, and highlight the clicked button
-        document.getElementById(tabId).classList.add("active");
-        evt.currentTarget.classList.add("active");
+        const targetContent = document.getElementById(tabId);
+        if (targetContent) {
+            targetContent.classList.add("active");
+        }
+        btn.classList.add("active");
     };
     // Automatically open the first tab of EVERY tab pane on page load
     const tabPanes = document.querySelectorAll('.tab-pane-container');
