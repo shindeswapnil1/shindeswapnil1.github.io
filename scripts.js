@@ -45,43 +45,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // 3. Artifact Details Tab Logic
-    // 3. Artifact Details Tab Logic (Robust Version)
     window.openTab = function(evt, tabId) {
-        // Safely capture the button, even during automated/synthetic clicks
-        const btn = evt.currentTarget || (evt.target ? evt.target.closest('.tab-btn') : null);
-        if (!btn) return;
-
-        // Find the specific container the user clicked inside
-        const container = btn.closest('.tab-pane-container');
-        if (!container) return;
-
-        // Hide all tab content inside THIS specific container
-        const tabContent = container.getElementsByClassName("tab-content");
+        const tabContent = document.getElementsByClassName("tab-content");
         for (let i = 0; i < tabContent.length; i++) {
             tabContent[i].classList.remove("active");
         }
 
-        // Remove the "active" class from all buttons inside THIS specific container
-        const tabBtns = container.getElementsByClassName("tab-btn");
+        const tabBtns = document.getElementsByClassName("tab-btn");
         for (let i = 0; i < tabBtns.length; i++) {
             tabBtns[i].classList.remove("active");
         }
 
-        // Show the current tab, and highlight the clicked button
-        const targetContent = document.getElementById(tabId);
-        if (targetContent) {
-            targetContent.classList.add("active");
-        }
-        btn.classList.add("active");
+        document.getElementById(tabId).classList.add("active");
+        evt.currentTarget.classList.add("active");
     };
-    // Automatically open the first tab of EVERY tab pane on page load
-    const tabPanes = document.querySelectorAll('.tab-pane-container');
-    tabPanes.forEach(pane => {
-        const firstTabBtn = pane.querySelector('.tab-btn');
-        if (firstTabBtn) {
-            firstTabBtn.click();
-        }
-    });
+});
 /* =========================================
    TUNEBOT CHATBOT LOGIC 
    ========================================= */
