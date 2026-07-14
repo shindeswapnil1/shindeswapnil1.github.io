@@ -15,17 +15,23 @@
 
     <header class="page-header">
         <h1 class="page-title">Artifact <em>Details</em>.</h1>
-        <p class="page-subtitle">Breif summary of the Objective, process, tools and value of specific deliverables.</p>
+        <p class="page-subtitle">Brief summary of the Objective, process, tools and value of specific deliverables.</p>
     </header>
 
     <div class="tab-pane-container">
         
-        <div class="tab-header">
-            <button class="tab-btn active" onclick="openTab(event, 'tab-title')"><span class="material-icons">title</span> Title</button>
-            <button class="tab-btn" onclick="openTab(event, 'tab-objective')"><span class="material-icons">track_changes</span> Objective</button>
-            <button class="tab-btn" onclick="openTab(event, 'tab-process')"><span class="material-icons">account_tree</span> Process</button>
-            <button class="tab-btn" onclick="openTab(event, 'tab-tools')"><span class="material-icons">build</span> Tools</button>
-            <button class="tab-btn" onclick="openTab(event, 'tab-value')"><span class="material-icons">diamond</span> Value</button>
+        <div class="tab-header" style="justify-content: space-between; align-items: center; padding-right: 15px;">
+            <div style="display: flex;">
+                <button class="tab-btn active" onclick="openTab(event, 'tab-title')"><span class="material-icons">title</span> Title</button>
+                <button class="tab-btn" onclick="openTab(event, 'tab-objective')"><span class="material-icons">track_changes</span> Objective</button>
+                <button class="tab-btn" onclick="openTab(event, 'tab-process')"><span class="material-icons">account_tree</span> Process</button>
+                <button class="tab-btn" onclick="openTab(event, 'tab-tools')"><span class="material-icons">build</span> Tools</button>
+                <button class="tab-btn" onclick="openTab(event, 'tab-value')"><span class="material-icons">diamond</span> Value</button>
+            </div>
+            
+            <a href="artifact1.html" target="_blank" style="display: flex; align-items: center; gap: 6px; background: var(--primary-accent); color: var(--bg-black); text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: 700; white-space: nowrap; transition: opacity 0.2s;">
+                Open Timeline <span class="material-icons" style="font-size: 14px;">launch</span>
+            </a>
         </div>
 
         <div id="tab-title" class="tab-content active">
@@ -76,31 +82,32 @@
     
     <div class="tab-pane-container" style="margin-top: 60px;">
         
-        <div class="tab-header">
-            <button class="tab-btn active" onclick="openTab(event, 'tunebot-title')">
-                <span class="material-icons">title</span> Title
-            </button>
-            <button class="tab-btn" onclick="openTab(event, 'tunebot-objective')">
-                <span class="material-icons">track_changes</span> Objective
-            </button>
-            <button class="tab-btn" onclick="openTab(event, 'tunebot-process')">
-                <span class="material-icons">account_tree</span> Process
-            </button>
-            <button class="tab-btn" onclick="openTab(event, 'tunebot-tools')">
-                <span class="material-icons">build</span> Tools
-            </button>
-            <button class="tab-btn" onclick="openTab(event, 'tunebot-value')">
-                <span class="material-icons">diamond</span> Value
-            </button>
+        <div class="tab-header" style="justify-content: space-between; align-items: center; padding-right: 15px;">
+            <div style="display: flex;">
+                <button class="tab-btn active" onclick="openTab(event, 'tunebot-title')">
+                    <span class="material-icons">title</span> Title
+                </button>
+                <button class="tab-btn" onclick="openTab(event, 'tunebot-objective')">
+                    <span class="material-icons">track_changes</span> Objective
+                </button>
+                <button class="tab-btn" onclick="openTab(event, 'tunebot-process')">
+                    <span class="material-icons">account_tree</span> Process
+                </button>
+                <button class="tab-btn" onclick="openTab(event, 'tunebot-tools')">
+                    <span class="material-icons">build</span> Tools
+                </button>
+                <button class="tab-btn" onclick="openTab(event, 'tunebot-value')">
+                    <span class="material-icons">diamond</span> Value
+                </button>
+            </div>
+
+            <a href="tunebot.html" target="_blank" style="display: flex; align-items: center; gap: 6px; background: var(--primary-accent); color: var(--bg-black); text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: 700; white-space: nowrap; transition: opacity 0.2s;">
+                Open TuneBot <span class="material-icons" style="font-size: 14px;">launch</span>
+            </a>
         </div>
 
         <div id="tunebot-title" class="tab-content active">
             <div class="content-label">What is it?</div>
-            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; margin-bottom: 20px;">
-                <a href="tunebot.html" target="_blank" style="display: flex; align-items: center; gap: 8px; background: var(--primary-accent); color: var(--bg-black); text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 700; transition: opacity 0.2s;">
-                    Open TuneBot <span class="material-icons" style="font-size: 16px;">launch</span>
-                </a>
-            </div>
             <div class="content-body">
                 <strong>An AI-Powered Music Recommendation Chatbot</strong>
             </div>
