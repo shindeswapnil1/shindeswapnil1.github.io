@@ -12,10 +12,8 @@
 <div id="scale-wrapper">
     <div class="portfolio-hero-container">
         
-        <!-- Fetched Navigation Bar Placeholder -->
         <div id="nav-placeholder"></div>
 
-        <!-- Centered UI Window Area -->
         <div class="window-frame">
             <div class="window-header">
                 <div class="window-dots">
@@ -25,19 +23,52 @@
                 </div>
             </div>
             
-            <div class="window-content">
-                <h1 class="headline">
-                    I bridge the gap between complex business needs & <em>technical execution.</em>
-                </h1>
-                <div class="sub-details">
-                    <div class="role-info">Senior Business Analyst at Trimble Inc.</div>
-                    <div class="role-info" style="color: var(--text-grey); font-size: 14px;">Based in Cincinnati.</div>
+            <div class="window-content" style="overflow: hidden; position: relative;">
+                
+                <div id="main-info" style="transition: opacity 0.4s ease;">
+                    <h1 class="headline">
+                        I bridge the gap between complex business needs & <em>technical execution.</em>
+                    </h1>
+                    <div class="sub-details">
+                        <div class="role-info">Senior Business Analyst at Trimble Inc.</div>
+                        <div class="role-info" style="color: var(--text-grey); font-size: 14px;">Based in Cincinnati.</div>
+                    </div>
                 </div>
+
+                <div id="about-overlay" class="about-overlay">
+                    <div class="about-layout">
+                        <div class="about-col">
+                            <h2 style="margin: 0 0 15px 0; font-size: 28px; font-weight: 700;">About <em style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 600;">Me</em>.</h2>
+                            <p class="about-text">The biggest bottleneck in scaling a global tech enterprise isn't a lack of data—it's the gap between complex business needs and technical execution. <strong>I bridge that gap.</strong></p>
+                            <p class="about-text">My journey began in the trenches of software engineering, where I spent 6 years building core frameworks. Today, with 10+ years in the industry, my career has evolved to leading cross-functional initiatives that modernize enterprise platforms. I leverage my technical DNA to architect global supply chain solutions that are as scalable as they are efficient.</p>
+                            <p class="about-text" style="margin-bottom: 0;">I have a deep-seated passion for problem-solving. I believe that a perfectly optimized system is the ultimate form of art; it allows people to focus on innovation rather than troubleshooting. If you are looking for a leader who speaks both "business" and "code" fluently, let's connect.</p>
+                        </div>
+                        
+                        <div class="about-col">
+                            <h3 style="margin: 0 0 15px 0; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-grey);">Career Highlights</h3>
+                            <ul class="highlight-list">
+                                <li><strong>Strategic Architecture:</strong> Transforming legacy processes into high-efficiency automated workflows.</li>
+                                <li><strong>SDLC Mastery:</strong> Expert in managing the full software development lifecycle and global system migrations.</li>
+                                <li><strong>Data Integrity:</strong> Establishing best-practice protocols to eliminate risk during complex enterprise upgrades.</li>
+                            </ul>
+
+                            <h3 style="margin: 25px 0 15px 0; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-grey);">Top Skills</h3>
+                            <div class="tools-wrapper">
+                                <div class="tool-pill">Business Process Improvement</div>
+                                <div class="tool-pill">Digital Transformation</div>
+                                <div class="tool-pill">Agile & SDLC Management</div>
+                                <div class="tool-pill">Solution Design</div>
+                                <div class="tool-pill">Data Integration</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
-        <div class="scroll-arrow">
-            <span class="material-icons">arrow_downward</span>
+        <div class="scroll-arrow" id="reveal-about" style="cursor: pointer;">
+            <span class="material-icons" id="arrow-icon" style="transition: transform 0.4s ease;">arrow_downward</span>
         </div>
 
     </div>
