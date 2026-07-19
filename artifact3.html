@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ML vs. Deep Learning Report</title>
+<link rel="stylesheet" href="styles.css">
+<script src="scripts.js" defer></script>
+<style>
+    .pdf-container {
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        overflow: hidden;
+        height: 80vh; /* Scales to viewport height */
+        min-height: 600px;
+    }
+    .pdf-container iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+</style>
+</head>
+<body>
+
+<div class="container" style="max-width: 1200px;">
+    
+    <div id="nav-placeholder"></div>
+
+    <header class="page-header" style="margin-bottom: 40px;">
+        <h1 class="page-title">Research <em>Report</em>.</h1>
+        <p class="page-subtitle">Evaluating AI architectures across Customer Churn and Autonomous Driving.</p>
+    </header>
+
+    <div class="pdf-container">
+        <iframe src="Machine_Learning_vs_Deep_Learning.pdf" title="Machine Learning vs Deep Learning PDF">
+            <p>Your browser does not support PDFs. 
+            <a href="Machine_Learning_vs_Deep_Learning.pdf" style="color: var(--primary-accent);">Download the PDF</a> instead.</p>
+        </iframe>
+    </div>
+
+</div>
+
+</body>
+</html>
