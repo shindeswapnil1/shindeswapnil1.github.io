@@ -362,3 +362,102 @@ body {
 }
 
 #send:hover { opacity: .85; }
+    .article-container {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        padding: 50px 60px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        margin-top: 20px;
+    }
+    .article-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 40px;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 30px;
+    }
+    .article-meta {
+        color: var(--text-grey);
+        font-size: 14px;
+        margin-top: 10px;
+    }
+    .download-btn {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--primary-accent);
+        color: var(--bg-black);
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 30px;
+        font-size: 13px;
+        font-weight: 700;
+        transition: opacity 0.2s;
+    }
+    .download-btn:hover {
+        opacity: 0.85;
+    }
+    .article-content h2 {
+        font-size: 24px;
+        font-weight: 700;
+        margin: 40px 0 20px 0;
+        color: var(--text-white);
+    }
+    .article-content h3 {
+        font-size: 18px;
+        font-weight: 600;
+        margin: 30px 0 15px 0;
+        color: var(--text-white);
+    }
+    .article-content p {
+        font-size: 16px;
+        line-height: 1.8;
+        color: #d1d1d6;
+        margin-bottom: 20px;
+    }
+    .article-content ul {
+        margin-bottom: 30px;
+        padding-left: 20px;
+    }
+    .article-content li {
+        font-size: 16px;
+        line-height: 1.8;
+        color: #d1d1d6;
+        margin-bottom: 12px;
+    }
+    .article-content strong {
+        color: var(--text-white);
+    }
+    /* Report Table Styling */
+    .report-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 40px 0;
+        font-size: 14px;
+    }
+    .report-table th, .report-table td {
+        border: 1px solid var(--border-color);
+        padding: 16px;
+        text-align: left;
+    }
+    .report-table th {
+        background: rgba(255,255,255,0.05);
+        color: var(--text-white);
+        font-weight: 700;
+    }
+    .report-table td {
+        color: #d1d1d6;
+        vertical-align: top;
+    }
+    .references {
+        margin-top: 60px;
+        border-top: 1px solid var(--border-color);
+        padding-top: 30px;
+        font-size: 13px;
+    }
+    .references p {
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
