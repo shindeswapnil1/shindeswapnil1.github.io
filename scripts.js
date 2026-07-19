@@ -491,19 +491,19 @@ document.addEventListener("DOMContentLoaded", () => {
             const isActive = aboutOverlay.classList.contains('active');
             
             if (!isActive) {
-                // Open About Section
+                // Slide up the About section
                 aboutOverlay.classList.add('active');
-                mainInfo.style.opacity = '0';
+                mainInfo.style.opacity = '0'; // Fade out the main text
                 
-                // Flip arrow and stop bounce
+                // Flip arrow to point up
                 arrowIcon.style.transform = 'rotate(180deg)';
-                arrowIcon.style.animation = 'none';
+                arrowIcon.style.animation = 'none'; // Stop the bouncing
             } else {
-                // Close About Section
+                // Slide down (hide) the About section
                 aboutOverlay.classList.remove('active');
-                mainInfo.style.opacity = '1';
+                mainInfo.style.opacity = '1'; // Fade the main text back in
                 
-                // Restore arrow and bounce
+                // Reset arrow
                 arrowIcon.style.transform = 'rotate(0deg)';
                 arrowIcon.style.animation = 'bounce 2s infinite';
             }
