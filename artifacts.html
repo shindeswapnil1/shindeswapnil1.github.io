@@ -153,6 +153,76 @@
         </div>
 
     </div>
+    <div class="tab-pane-container" style="margin-top: 60px;">
+        
+        <div class="tab-header" style="justify-content: space-between; align-items: center; padding-right: 15px;">
+            <div style="display: flex;">
+                <button class="tab-btn active" onclick="openTab(event, 'ml-title')">
+                    <span class="material-icons">title</span> Title
+                </button>
+                <button class="tab-btn" onclick="openTab(event, 'ml-objective')">
+                    <span class="material-icons">track_changes</span> Objective
+                </button>
+                <button class="tab-btn" onclick="openTab(event, 'ml-process')">
+                    <span class="material-icons">account_tree</span> Process
+                </button>
+                <button class="tab-btn" onclick="openTab(event, 'ml-tools')">
+                    <span class="material-icons">build</span> Tools
+                </button>
+                <button class="tab-btn" onclick="openTab(event, 'ml-value')">
+                    <span class="material-icons">diamond</span> Value
+                </button>
+            </div>
+
+            <a href="artifact3.html" target="_blank" style="display: flex; align-items: center; gap: 6px; background: var(--primary-accent); color: var(--bg-black); text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: 700; white-space: nowrap; transition: opacity 0.2s;">
+                Open Report <span class="material-icons" style="font-size: 14px;">launch</span>
+            </a>
+        </div>
+
+        <div id="ml-title" class="tab-content active">
+            <div class="content-label">What is it?</div>
+            <div class="content-body">
+                <strong>Machine Learning vs. Deep Learning: Enterprise Use Cases</strong>
+            </div>
+        </div>
+
+        <div id="ml-objective" class="tab-content">
+            <div class="content-label">Why did you create it?</div>
+            <div class="content-body">
+                This report evaluates two enterprise use cases: telecom Customer Churn Prediction and Autonomous Driving Real-Time Perception[cite: 7]. The goal is to justify the best architecture for each by analyzing data size, feature engineering, and computing trade-offs[cite: 8]. 
+            </div>
+        </div>
+
+        <div id="ml-process" class="tab-content">
+            <div class="content-label">How did you make it?</div>
+            <div class="content-body">
+                <ul>
+                    <li><strong>Architectural Analysis:</strong> Contrasted the handling of structured, tabular data by Support Vector Machines (SVM) against the processing of unstructured spatial data by Convolutional Neural Networks (CNNs)[cite: 21, 22, 44].</li>
+                    <li><strong>Feature Engineering Evaluation:</strong> Examined the manual feature engineering bottleneck of classical algorithms compared to the automated feature extraction capabilities of deep learning hidden layers[cite: 45, 46, 49, 50].</li>
+                    <li><strong>Performance Trade-offs:</strong> Analyzed the computational resource efficiency of traditional ML running on CPUs versus the massive parallel execution power of Deep Learning requiring GPUs/TPUs[cite: 26, 27, 47].</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="ml-tools" class="tab-content">
+            <div class="content-label">Tech Used</div>
+            <div class="content-body">
+                <div class="tools-wrapper">
+                    <div class="tool-pill"><span class="material-icons">description</span> Technical Research</div>
+                    <div class="tool-pill"><span class="material-icons">psychology</span> Analytical Strategy</div>
+                    <div class="tool-pill"><span class="material-icons">auto_awesome</span> Gemini (Editorial Refinement) [cite: 84]</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="ml-value" class="tab-content">
+            <div class="content-label">Artifact-Specific Value Proposition</div>
+            <div class="content-body">
+                Provides a strategic framework for organizations to choose between lightweight, explainable traditional machine learning deployments and highly complex deep learning networks[cite: 59, 60]. It highlights that forward-thinking enterprises must see these technologies as complementary tools designed for different data realities[cite: 61].
+            </div>
+        </div>
+
+    </div>
 
 </div>
 
