@@ -476,3 +476,37 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 300);
 
 });
+
+/* =========================================
+   ABOUT ME REVEAL LOGIC (INDEX PAGE)
+   ========================================= */
+document.addEventListener("DOMContentLoaded", () => {
+    const revealBtn = document.getElementById('reveal-about');
+    const aboutOverlay = document.getElementById('about-overlay');
+    const mainInfo = document.getElementById('main-info');
+    const arrowIcon = document.getElementById('arrow-icon');
+
+    if (revealBtn && aboutOverlay && mainInfo && arrowIcon) {
+        revealBtn.addEventListener('click', () => {
+            const isActive = aboutOverlay.classList.contains('active');
+            
+            if (!isActive) {
+                // Open About Section
+                aboutOverlay.classList.add('active');
+                mainInfo.style.opacity = '0';
+                
+                // Flip arrow and stop bounce
+                arrowIcon.style.transform = 'rotate(180deg)';
+                arrowIcon.style.animation = 'none';
+            } else {
+                // Close About Section
+                aboutOverlay.classList.remove('active');
+                mainInfo.style.opacity = '1';
+                
+                // Restore arrow and bounce
+                arrowIcon.style.transform = 'rotate(0deg)';
+                arrowIcon.style.animation = 'bounce 2s infinite';
+            }
+        });
+    }
+});
