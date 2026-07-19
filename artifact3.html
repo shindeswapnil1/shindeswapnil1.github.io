@@ -6,107 +6,6 @@
 <title>ML vs. Deep Learning Report</title>
 <link rel="stylesheet" href="styles.css">
 <script src="scripts.js" defer></script>
-<style>
-    .article-container {
-        background: var(--card-bg);
-        border: 1px solid var(--border-color);
-        border-radius: 12px;
-        padding: 50px 60px;
-        box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-        margin-top: 20px;
-    }
-    .article-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        margin-bottom: 40px;
-        border-bottom: 1px solid var(--border-color);
-        padding-bottom: 30px;
-    }
-    .article-meta {
-        color: var(--text-grey);
-        font-size: 14px;
-        margin-top: 10px;
-    }
-    .download-btn {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        background: var(--primary-accent);
-        color: var(--bg-black);
-        text-decoration: none;
-        padding: 10px 20px;
-        border-radius: 30px;
-        font-size: 13px;
-        font-weight: 700;
-        transition: opacity 0.2s;
-    }
-    .download-btn:hover {
-        opacity: 0.85;
-    }
-    .article-content h2 {
-        font-size: 24px;
-        font-weight: 700;
-        margin: 40px 0 20px 0;
-        color: var(--text-white);
-    }
-    .article-content h3 {
-        font-size: 18px;
-        font-weight: 600;
-        margin: 30px 0 15px 0;
-        color: var(--text-white);
-    }
-    .article-content p {
-        font-size: 16px;
-        line-height: 1.8;
-        color: #d1d1d6;
-        margin-bottom: 20px;
-    }
-    .article-content ul {
-        margin-bottom: 30px;
-        padding-left: 20px;
-    }
-    .article-content li {
-        font-size: 16px;
-        line-height: 1.8;
-        color: #d1d1d6;
-        margin-bottom: 12px;
-    }
-    .article-content strong {
-        color: var(--text-white);
-    }
-    /* Report Table Styling */
-    .report-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 40px 0;
-        font-size: 14px;
-    }
-    .report-table th, .report-table td {
-        border: 1px solid var(--border-color);
-        padding: 16px;
-        text-align: left;
-    }
-    .report-table th {
-        background: rgba(255,255,255,0.05);
-        color: var(--text-white);
-        font-weight: 700;
-    }
-    .report-table td {
-        color: #d1d1d6;
-        vertical-align: top;
-    }
-    .references {
-        margin-top: 60px;
-        border-top: 1px solid var(--border-color);
-        padding-top: 30px;
-        font-size: 13px;
-    }
-    .references p {
-        font-size: 13px;
-        margin-bottom: 10px;
-    }
-</style>
 </head>
 <body>
 
@@ -118,10 +17,10 @@
         
         <div class="article-header">
             <div>
-                <h1 class="page-title" style="margin-bottom: 5px; font-size: 36px;">Machine Learning vs. Deep Learning [cite: 1]</h1>
+                <h1 class="page-title" style="margin-bottom: 5px; font-size: 36px;">Machine Learning vs. Deep Learning</h1>
                 <div class="article-meta">
-                    By Swapnil Sukhdeorao Shinde | July 19th, 2026 [cite: 2, 5]<br>
-                    3SU2026 AIML-500-01N1B- Machine Learning Fundamentals | Dr. Lawrence Iweriebor [cite: 3, 4]
+                    By Swapnil Sukhdeorao Shinde | July 19th, 2026 <br>
+                    3SU2026 AIML-500-01N1B- Machine Learning Fundamentals | Dr. Lawrence Iweriebor 
                 </div>
             </div>
             
@@ -131,109 +30,109 @@
         </div>
 
         <div class="article-content">
-            <p>Choosing between Machine Learning and Deep Learning determines a software's efficiency, scalability, and cost[cite: 6]. This report evaluates two enterprise use cases: telecom Customer Churn Prediction and Autonomous Driving Real-Time Perception[cite: 7]. We justify the best architecture for each by analyzing data size, feature engineering, and computing trade-offs[cite: 8].</p>
+            <p>Choosing between Machine Learning and Deep Learning determines a software's efficiency, scalability, and cost. This report evaluates two enterprise use cases: telecom Customer Churn Prediction and Autonomous Driving Real-Time Perception. We justify the best architecture for each by analyzing data size, feature engineering, and computing trade-offs.</p>
 
-            <h2>Customer Churn Prediction (Traditional Machine Learning) [cite: 9]</h2>
-            <p>Loyalty is the ultimate currency in the modern telecommunications landscape, where keeping a current customer costs a fraction of winning a new one[cite: 10]. Leading players like Verizon and AT&T stay ahead of customer defection by leveraging Customer Churn Prediction Models to scan millions of rows of subscriber data for critical warning signs[cite: 11]. As emphasized by researchers, the true value of these models lies in integrating explainable artificial intelligence directly into Customer Relationship Management (CRM) operational workflows to automate mitigation strategies[cite: 12]. The moment a subscriber is flagged as a flight risk, automated CRM protocols kick in - instantly deploying personalized discounts or connecting the user with a specialized retention squad to save the relationship before they jump ship (Al-Azazi et al., 2025)[cite: 13].</p>
+            <h2>Customer Churn Prediction (Traditional Machine Learning) </h2>
+            <p>Loyalty is the ultimate currency in the modern telecommunications landscape, where keeping a current customer costs a fraction of winning a new one. Leading players like Verizon and AT&T stay ahead of customer defection by leveraging Customer Churn Prediction Models to scan millions of rows of subscriber data for critical warning signs. As emphasized by researchers, the true value of these models lies in integrating explainable artificial intelligence directly into Customer Relationship Management (CRM) operational workflows to automate mitigation strategies. The moment a subscriber is flagged as a flight risk, automated CRM protocols kick in - instantly deploying personalized discounts or connecting the user with a specialized retention squad to save the relationship before they jump ship (Al-Azazi et al., 2025).</p>
 
-            <p>Within the telecommunications sector, customer attrition is heavily influenced by a core set of highly localized operational and behavioral metrics[cite: 14]:</p>
+            <p>Within the telecommunications sector, customer attrition is heavily influenced by a core set of highly localized operational and behavioral metrics:</p>
             <ul>
-                <li><strong>Contract Type:</strong> Subscribers on flexible month-to-month arrangements display dramatically higher cancellation rates compared to individuals bound to more stable one- or two-year commitments (Gautam, 2026)[cite: 15].</li>
-                <li><strong>Tenure:</strong> The onboarding phase represents a highly volatile period; the opening three to six months of the consumer life cycle serves as a critical retention bottleneck where early friction quickly translates into immediate contract termination (Sarkar, 2025)[cite: 16, 17].</li>
-                <li><strong>Billing Issues:</strong> Financial workflows introduce friction, meaning that confusing billing processes, paper-based statements, and unresolved payment disputes reliably escalate churn risk (Bill, 2023)[cite: 18].</li>
-                <li><strong>Support Interactions:</strong> Customer service health indicators act as major operational red flags, with high volumes of technical support tickets or repeated complaints about network quality and slow connectivity identifying accounts most likely to defect (Ogingo, 2022)[cite: 19].</li>
+                <li><strong>Contract Type:</strong> Subscribers on flexible month-to-month arrangements display dramatically higher cancellation rates compared to individuals bound to more stable one- or two-year commitments (Gautam, 2026).</li>
+                <li><strong>Tenure:</strong> The onboarding phase represents a highly volatile period; the opening three to six months of the consumer life cycle serves as a critical retention bottleneck where early friction quickly translates into immediate contract termination (Sarkar, 2025).</li>
+                <li><strong>Billing Issues:</strong> Financial workflows introduce friction, meaning that confusing billing processes, paper-based statements, and unresolved payment disputes reliably escalate churn risk (Bill, 2023)].</li>
+                <li><strong>Support Interactions:</strong> Customer service health indicators act as major operational red flags, with high volumes of technical support tickets or repeated complaints about network quality and slow connectivity identifying accounts most likely to defect (Ogingo, 2022).</li>
             </ul>
 
-            <h3>Why Support Vector Machines (SVM) Are Suitable [cite: 20]</h3>
+            <h3>Why Support Vector Machines (SVM) Are Suitable </h3>
             <ul>
-                <li><strong>Tabular Data Optimization:</strong> Telecom data contains explicit numerical and categorical records like age, billing, and contract duration[cite: 21]. SVMs natively handle structured feature spaces by identifying optimal separating hyperplanes, using the "kernel trick" to seamlessly project non-linear boundaries into higher dimensions (Vapnik, 1995)[cite: 22].</li>
-                <li><strong>Lower Data Thresholds:</strong> Unlike deep architectures that require massive data volumes to reach stable convergence, a properly tuned SVM delivers high predictive precision on modest datasets containing only thousands or thousands of rows (Vapnik, 1995)[cite: 23].</li>
-                <li><strong>Feature Interpretability:</strong> Telecom business intelligence requires understanding the exact triggers behind subscriber churn[cite: 24]. Traditional machine learning permits direct extraction of feature weights and predictive importances, allowing executives to identify vulnerable consumer cohorts, such as high-billing, month-to-month subscribers (Rudin, 2019)[cite: 25].</li>
-                <li><strong>Resource Efficiency:</strong> Training and serving an SVM requires minimal computational overhead[cite: 26]. Pipelines execute rapidly on standard multi-core CPUs, bypassing the need for expensive GPU clusters or specialized hardware infrastructure (Vapnik, 1995)[cite: 27].</li>
+                <li><strong>Tabular Data Optimization:</strong> Telecom data contains explicit numerical and categorical records like age, billing, and contract duration. SVMs natively handle structured feature spaces by identifying optimal separating hyperplanes, using the "kernel trick" to seamlessly project non-linear boundaries into higher dimensions (Vapnik, 1995).</li>
+                <li><strong>Lower Data Thresholds:</strong> Unlike deep architectures that require massive data volumes to reach stable convergence, a properly tuned SVM delivers high predictive precision on modest datasets containing only thousands or thousands of rows (Vapnik, 1995).</li>
+                <li><strong>Feature Interpretability:</strong> Telecom business intelligence requires understanding the exact triggers behind subscriber churn. Traditional machine learning permits direct extraction of feature weights and predictive importances, allowing executives to identify vulnerable consumer cohorts, such as high-billing, month-to-month subscribers (Rudin, 2019).</li>
+                <li><strong>Resource Efficiency:</strong> Training and serving an SVM requires minimal computational overhead. Pipelines execute rapidly on standard multi-core CPUs, bypassing the need for expensive GPU clusters or specialized hardware infrastructure (Vapnik, 1995).</li>
             </ul>
 
-            <h3>Why Deep Learning Is Not Suitable [cite: 28]</h3>
+            <h3>Why Deep Learning Is Not Suitable </h3>
             <ul>
-                <li><strong>Tabular Overfitting:</strong> Deep neural networks contain millions of parameters optimized for spatial or sequential data[cite: 29]. When applied to small, low-dimensional tabular matrices, they easily memorize training patterns, leading to severe overfitting and poor generalization on unseen customer records (Grinsztajn et al., 2022; Shwartz-Ziv & Armon, 2022)[cite: 30].</li>
-                <li><strong>The "Black Box" Problem:</strong> Deep networks process variables across dense, recursive hidden layers, creating opaque decision paths[cite: 31]. This opacity makes it incredibly difficult to trace why a specific customer is flagged to churn, failing to yield the actionable insights required by risk management teams (Rudin, 2019)[cite: 32].</li>
-                <li><strong>Unnecessary Engineering Overhead:</strong> Implementing complex deep learning frameworks for basic tabular classification introduces unnecessary technical debt[cite: 33]. It dramatically extends training runtimes and increases cloud infrastructure expenses without delivering a justifiable lift in model performance over classical methods (Grinsztajn et al., 2022; Shwartz-Ziv & Armon, 2022)[cite: 34].</li>
+                <li><strong>Tabular Overfitting:</strong> Deep neural networks contain millions of parameters optimized for spatial or sequential data. When applied to small, low-dimensional tabular matrices, they easily memorize training patterns, leading to severe overfitting and poor generalization on unseen customer records (Grinsztajn et al., 2022; Shwartz-Ziv & Armon, 2022).</li>
+                <li><strong>The "Black Box" Problem:</strong> Deep networks process variables across dense, recursive hidden layers, creating opaque decision path. This opacity makes it incredibly difficult to trace why a specific customer is flagged to churn, failing to yield the actionable insights required by risk management teams (Rudin, 2019).</li>
+                <li><strong>Unnecessary Engineering Overhead:</strong> Implementing complex deep learning frameworks for basic tabular classification introduces unnecessary technical debt. It dramatically extends training runtimes and increases cloud infrastructure expenses without delivering a justifiable lift in model performance over classical methods (Grinsztajn et al., 2022; Shwartz-Ziv & Armon, 2022).</li>
             </ul>
 
-            <h2>Autonomous Driving Perception (Deep Learning) [cite: 35]</h2>
-            <p>The driverless revolution, led by Tesla, Waymo, and Cruise, depends entirely on split-second decision-making[cite: 36]. Onboard computers must continuously process massive data streams from cameras, LiDAR, and radar[cite: 37]. Traditional rule-based controllers and classical machine learning handle predictable variables well but struggle in chaotic urban traffic[cite: 38]. To solve this, engineering has shifted toward deep learning models[cite: 39]. These neural networks act as the vehicle's eyes and brain, processing raw visual information without manual guidance[cite: 40]. However, a major technical debate persists as full commercialization nears[cite: 41]. Engineers must choose between classical machine learning's highly interpretable data pipelines and deep learning's massive, end-to-end predictive power, carefully balancing safety, accuracy, and computational efficiency[cite: 42].</p>
+            <h2>Autonomous Driving Perception (Deep Learning)</h2>
+            <p>The driverless revolution, led by Tesla, Waymo, and Cruise, depends entirely on split-second decision-making. Onboard computers must continuously process massive data streams from cameras, LiDAR, and radar. Traditional rule-based controllers and classical machine learning handle predictable variables well but struggle in chaotic urban traffic. To solve this, engineering has shifted toward deep learning models. These neural networks act as the vehicle's eyes and brain, processing raw visual information without manual guidance. However, a major technical debate persists as full commercialization nears. Engineers must choose between classical machine learning's highly interpretable data pipelines and deep learning's massive, end-to-end predictive power, carefully balancing safety, accuracy, and computational efficiency.</p>
 
-            <h3>Why Deep Learning Is Suitable [cite: 43]</h3>
+            <h3>Why Deep Learning Is Suitable </h3>
             <ul>
-                <li><strong>Unstructured Data Processing:</strong> Convolutional Neural Networks (CNNs) handle pixel hierarchies, allowing them to automatically scan local pixel neighborhoods to recognize shapes, edges, and objects (such as cyclists) within complex, unstructured video feeds and LiDAR point clouds (Janai et al., 2020; Li & Ibanez-Guzman, 2020)[cite: 44].</li>
-                <li><strong>Automated Feature Extraction:</strong> Deep learning bypasses the need for human programmers to manually script rules for every pedestrian variation, such as varying lighting, angles, or clothing; instead, the neural network implicitly extracts these abstract features during training (Bojarski et al., 2016; Guo et al., 2025)[cite: 45, 46].</li>
-                <li><strong>Real-Time Parallel Execution:</strong> When deployed on dedicated edge-Al hardware like GPUs or TPUs, deep learning models perform billions of matrix calculations simultaneously, allowing the vehicle to process inputs and make adjustments with ultra-low latency-typically under 20 milliseconds-to ensure safety at highway speeds (Bojarski et al., 2016; Guo et al., 2025)[cite: 47].</li>
+                <li><strong>Unstructured Data Processing:</strong> Convolutional Neural Networks (CNNs) handle pixel hierarchies, allowing them to automatically scan local pixel neighborhoods to recognize shapes, edges, and objects (such as cyclists) within complex, unstructured video feeds and LiDAR point clouds (Janai et al., 2020; Li & Ibanez-Guzman, 2020).</li>
+                <li><strong>Automated Feature Extraction:</strong> Deep learning bypasses the need for human programmers to manually script rules for every pedestrian variation, such as varying lighting, angles, or clothing; instead, the neural network implicitly extracts these abstract features during training (Bojarski et al., 2016; Guo et al., 2025).</li>
+                <li><strong>Real-Time Parallel Execution:</strong> When deployed on dedicated edge-Al hardware like GPUs or TPUs, deep learning models perform billions of matrix calculations simultaneously, allowing the vehicle to process inputs and make adjustments with ultra-low latency-typically under 20 milliseconds-to ensure safety at highway speeds (Bojarski et al., 2016; Guo et al., 2025).</li>
             </ul>
 
-            <h3>Why Machine Learning is Not Suitable [cite: 48]</h3>
+            <h3>Why Machine Learning is Not Suitable </h3>
             <ul>
-                <li><strong>The Manual Feature Engineering Bottleneck:</strong> Traditional machine learning algorithms cannot ingest raw pixels directly[cite: 49]. To utilize a Support Vector Machine (SVM) for autonomous driving, engineers must manually design computer vision filters such as HOG or SIFT-to isolate shapes, a process that completely breaks down in dynamic, chaotic real-world driving environments altered by rain, shadows, or occluded objects (AllianceTek, 2025; Syracuse University, 2025)[cite: 50].</li>
-                <li><strong>Inability to Scale with Complex Data:</strong> Traditional algorithms hit a rigid performance ceiling where adding massive amounts of data fails to drastically improve accuracy once hand-crafted feature limits are reached (Syracuse University, 2025)[cite: 51]. For self-driving cars to achieve extreme reliability thresholds, they require architectures like deep learning that continuously scale in performance as zettabytes of driving data are ingested (Waymo, 2025)[cite: 52].</li>
-                <li><strong>Failure in High-Dimensional Spaces:</strong> Passing high-definition image streams directly into a classifier triggers the "curse of dimensionality" (VisionDummy, 2014)[cite: 53]. Because the feature space becomes excessively massive, classical algorithms struggle to establish a meaningful separating hyperplane, causing the model to stall computationally or experience total operational failure during real-time navigation (Chou & Ko, 2017; VisionDummy, 2014)[cite: 54].</li>
+                <li><strong>The Manual Feature Engineering Bottleneck:</strong> Traditional machine learning algorithms cannot ingest raw pixels directly. To utilize a Support Vector Machine (SVM) for autonomous driving, engineers must manually design computer vision filters such as HOG or SIFT-to isolate shapes, a process that completely breaks down in dynamic, chaotic real-world driving environments altered by rain, shadows, or occluded objects (AllianceTek, 2025; Syracuse University, 2025).</li>
+                <li><strong>Inability to Scale with Complex Data:</strong> Traditional algorithms hit a rigid performance ceiling where adding massive amounts of data fails to drastically improve accuracy once hand-crafted feature limits are reached (Syracuse University, 2025). For self-driving cars to achieve extreme reliability thresholds, they require architectures like deep learning that continuously scale in performance as zettabytes of driving data are ingested (Waymo, 2025).</li>
+                <li><strong>Failure in High-Dimensional Spaces:</strong> Passing high-definition image streams directly into a classifier triggers the "curse of dimensionality" (VisionDummy, 2014). Because the feature space becomes excessively massive, classical algorithms struggle to establish a meaningful separating hyperplane, causing the model to stall computationally or experience total operational failure during real-time navigation (Chou & Ko, 2017; VisionDummy, 2014).</li>
             </ul>
 
-            <h2>Key Takeaways [cite: 55]</h2>
+            <h2>Key Takeaways </h2>
             
             <table class="report-table">
                 <thead>
                     <tr>
-                        <th>Dimension [cite: 56]</th>
-                        <th>Traditional Machine Learning (e.g., SVM) [cite: 56]</th>
-                        <th>Deep Learning (e.g., CNN) [cite: 56]</th>
+                        <th>Dimension </th>
+                        <th>Traditional Machine Learning (e.g., SVM)</th>
+                        <th>Deep Learning (e.g., CNN) </th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Primary Use Case</strong> [cite: 56]</td>
-                        <td>Customer Churn Analytics [cite: 56]</td>
-                        <td>Autonomous Driving Systems [cite: 56]</td>
+                        <td><strong>Primary Use Case</strong> </td>
+                        <td>Customer Churn Analytics </td>
+                        <td>Autonomous Driving Systems </td>
                     </tr>
                     <tr>
-                        <td><strong>Input Data Profile</strong> [cite: 56]</td>
-                        <td>Structured, tabular data (Excel, SQL) [cite: 56]</td>
-                        <td>Unstructured data (Video, Images, Point Clouds) [cite: 56]</td>
+                        <td><strong>Input Data Profile</strong> </td>
+                        <td>Structured, tabular data (Excel, SQL)</td>
+                        <td>Unstructured data (Video, Images, Point Clouds) </td>
                     </tr>
                     <tr>
-                        <td><strong>Feature Engineering</strong> [cite: 56]</td>
-                        <td>Manually hand-crafted by domain experts [cite: 56]</td>
-                        <td>Automated via hidden layers and convolutions [cite: 56]</td>
+                        <td><strong>Feature Engineering</strong> </td>
+                        <td>Manually hand-crafted by domain experts </td>
+                        <td>Automated via hidden layers and convolutions </td>
                     </tr>
                     <tr>
-                        <td><strong>Infrastructure Demands</strong> [cite: 56]</td>
-                        <td>Low cost; runs efficiently on standard CPUs [cite: 56]</td>
-                        <td>High cost; requires GPUs/TPUs for training [cite: 56]</td>
+                        <td><strong>Infrastructure Demands</strong> </td>
+                        <td>Low cost; runs efficiently on standard CPUs </td>
+                        <td>High cost; requires GPUs/TPUs for training </td>
                     </tr>
                     <tr>
-                        <td><strong>Core Strategic Value</strong> [cite: 56]</td>
-                        <td>High interpretability and lightweight deployment [cite: 56]</td>
-                        <td>Mastery of complex spatial and temporal patterns [cite: 56]</td>
+                        <td><strong>Core Strategic Value</strong> </td>
+                        <td>High interpretability and lightweight deployment</td>
+                        <td>Mastery of complex spatial and temporal patterns </td>
                     </tr>
                 </tbody>
             </table>
 
-            <h2>Conclusion [cite: 57]</h2>
-            <p>Ultimately, traditional machine learning and deep learning represent two distinct paths to data driven intelligence[cite: 58]. Machine learning provides organizations with lightweight, explainable deployment that runs efficiently on standard CPUs, making it the perfect choice for analytical business data[cite: 59]. Conversely, deep learning unlocks unmatched mastery over complex spatial and temporal patterns, pushing the boundaries of what machines can see and interpret via specialized GPU hardware[cite: 60]. Rather than viewing them as competing technologies, forward-thinking enterprises must see them as complementary tools designed for different data realities[cite: 61].</p>
+            <h2>Conclusion </h2>
+            <p>Ultimately, traditional machine learning and deep learning represent two distinct paths to data driven intelligence. Machine learning provides organizations with lightweight, explainable deployment that runs efficiently on standard CPUs, making it the perfect choice for analytical business data. Conversely, deep learning unlocks unmatched mastery over complex spatial and temporal patterns, pushing the boundaries of what machines can see and interpret via specialized GPU hardware. Rather than viewing them as competing technologies, forward-thinking enterprises must see them as complementary tools designed for different data realities.</p>
 
             <div class="references">
-                <h3 style="margin-top: 0;">References [cite: 62]</h3>
-                <p>Al-Azazi, F., Al-Makhali, M., & Al-Gaphari, A. (2025). A predictive analytics approach to improve telecom's customer churn prediction. BMC Research Notes, 18, Article 412. nih.gov [cite: 63, 64]</p>
-                <p>Bill, M. (2023, March 31). The churn challenge: Overcoming customer attrition in telecom. LinkedIn. linkedin.com [cite: 65]</p>
-                <p>Gautam, K. (2026, February 14). Customer churn drivers: Month-to-month contracts and high monthly charges. LinkedIn. linkedin.com [cite: 66]</p>
-                <p>Ogingo, J. (2022, June 27). Telco customer churn analysis using Power BI. Medium. medium.com [cite: 67]</p>
-                <p>Sarkar, P. (2025, October 7). Customer churn in telecom industry: A comprehensive analysis and limitations. Medium. medium.com [cite: 68]</p>
-                <p>Grinsztajn, L., Oyallon, E., & Varoquaux, G. (2022). Why do tree-based models still outperform deep learning on tabular data? arXiv preprint arXiv:2207.08815. arxiv.org [cite: 69, 70]</p>
-                <p>Rudin, C. (2019). Stop explaining black box machine learning models for high stakes decisions and use interpretable models instead. Nature Machine Intelligence, 1(5), 206-215. doi.org [cite: 71, 72]</p>
-                <p>Shwartz-Ziv, R., & Armon, A. (2022). Tabular data: Deep learning is not all you need. Information Fusion, 81, 84-90. doi.org [cite: 73]</p>
-                <p>Vapnik, V. N. (1995). The nature of statistical learning theory. Springer-Verlag. doi.org [cite: 74]</p>
-                <p>Bojarski, M., Del Testa, D., Dworakowski, D., Firner, B., Flepp, B., Goyal, P., Jackel, L. D., Monfort, M., Muller, U., Zhang, J., Zhang, X., Zhao, J., & Zieba, K. (2016). End-to-end deep learning for self-driving cars. NVIDIA Corporation. nvidia.com [cite: 75, 76]</p>
-                <p>Guo, J., Li, Y., & Zhang, X. (2025). A survey of autonomous driving from a deep learning perspective. ACM Computing Surveys, 57(4), 1-38. acm.org [cite: 77, 78]</p>
-                <p>Janai, J., Gidaris, S., Fritsch, D., & Geiger, A. (2020). Computer vision for autonomous vehicles: Problems, datasets and state of the art. Foundations and Trends in Computer Graphics and Vision, 12(1-3), 1-308. arxiv.org [cite: 79, 80, 81]</p>
-                <p>Li, Y., & Ibanez-Guzman, J. (2020). Lidar for autonomous driving: The principles, challenges, and trends for automotive applications. IEEE Signal Processing Magazine, 37(4), 50-61. ieee.org [cite: 82, 83]</p>
-                <p><em>AI Usage Statement: Gemini was used to specifically assist with text summarization, paragraph compression, and editorial refinement. [cite: 84]</em></p>
+                <h3 style="margin-top: 0;">References </h3>
+                <p>Al-Azazi, F., Al-Makhali, M., & Al-Gaphari, A. (2025). A predictive analytics approach to improve telecom's customer churn prediction. BMC Research Notes, 18, Article 412. nih.gov </p>
+                <p>Bill, M. (2023, March 31). The churn challenge: Overcoming customer attrition in telecom. LinkedIn. linkedin.com </p>
+                <p>Gautam, K. (2026, February 14). Customer churn drivers: Month-to-month contracts and high monthly charges. LinkedIn. linkedin.com </p>
+                <p>Ogingo, J. (2022, June 27). Telco customer churn analysis using Power BI. Medium. medium.com </p>
+                <p>Sarkar, P. (2025, October 7). Customer churn in telecom industry: A comprehensive analysis and limitations. Medium. medium.com </p>
+                <p>Grinsztajn, L., Oyallon, E., & Varoquaux, G. (2022). Why do tree-based models still outperform deep learning on tabular data? arXiv preprint arXiv:2207.08815. arxiv.org </p>
+                <p>Rudin, C. (2019). Stop explaining black box machine learning models for high stakes decisions and use interpretable models instead. Nature Machine Intelligence, 1(5), 206-215. doi.org </p>
+                <p>Shwartz-Ziv, R., & Armon, A. (2022). Tabular data: Deep learning is not all you need. Information Fusion, 81, 84-90. doi.org </p>
+                <p>Vapnik, V. N. (1995). The nature of statistical learning theory. Springer-Verlag. doi.org </p>
+                <p>Bojarski, M., Del Testa, D., Dworakowski, D., Firner, B., Flepp, B., Goyal, P., Jackel, L. D., Monfort, M., Muller, U., Zhang, J., Zhang, X., Zhao, J., & Zieba, K. (2016). End-to-end deep learning for self-driving cars. NVIDIA Corporation. nvidia.com </p>
+                <p>Guo, J., Li, Y., & Zhang, X. (2025). A survey of autonomous driving from a deep learning perspective. ACM Computing Surveys, 57(4), 1-38. acm.org </p>
+                <p>Janai, J., Gidaris, S., Fritsch, D., & Geiger, A. (2020). Computer vision for autonomous vehicles: Problems, datasets and state of the art. Foundations and Trends in Computer Graphics and Vision, 12(1-3), 1-308. arxiv.org </p>
+                <p>Li, Y., & Ibanez-Guzman, J. (2020). Lidar for autonomous driving: The principles, challenges, and trends for automotive applications. IEEE Signal Processing Magazine, 37(4), 50-61. ieee.org </p>
+                <p><em>AI Usage Statement: Gemini was used to specifically assist with text summarization, paragraph compression, and editorial refinement. </em></p>
             </div>
 
         </div>
