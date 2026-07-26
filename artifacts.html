@@ -224,63 +224,79 @@
 
     </div>
     
-    <div class="tab-pane-container">
-        <div class="tab-header">
-            <div class="tab-buttons">
-            <button class="tab-btn active" onclick="openTab(event, 'schoolai-title')">Title</button>
-            <button class="tab-btn" onclick="openTab(event, 'schoolai-objective')">Objective</button>
-            <button class="tab-btn" onclick="openTab(event, 'schoolai-process')">Process</button>
-            <button class="tab-btn" onclick="openTab(event, 'schoolai-tools')">Tools</button>
-            <button class="tab-btn" onclick="openTab(event, 'schoolai-value')">Value</button>
+    <div class="tab-pane-container" style="margin-top: 60px;">
+        
+        <div class="tab-header" style="justify-content: space-between; align-items: center; padding-right: 15px;">
+            <div style="display: flex;">
+                <button class="tab-btn active" onclick="openTab(event, 'schoolai-title')">
+                    <span class="material-icons">title</span> Title
+                </button>
+                <button class="tab-btn" onclick="openTab(event, 'schoolai-objective')">
+                    <span class="material-icons">track_changes</span> Objective
+                </button>
+                <button class="tab-btn" onclick="openTab(event, 'schoolai-process')">
+                    <span class="material-icons">account_tree</span> Process
+                </button>
+                <button class="tab-btn" onclick="openTab(event, 'schoolai-tools')">
+                    <span class="material-icons">build</span> Tools
+                </button>
+                <button class="tab-btn" onclick="openTab(event, 'schoolai-value')">
+                    <span class="material-icons">diamond</span> Value
+                </button>
             </div>
-            <a href="artifact4.html" target="_blank" class="open-artifact-btn">
-            Open SchoolAI Space ↗
+
+            <a href="artifact4.html" target="_blank" style="display: flex; align-items: center; gap: 6px; background: var(--primary-accent); color: var(--bg-black); text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: 700; white-space: nowrap; transition: opacity 0.2s;">
+                Open SchoolAI Space <span class="material-icons" style="font-size: 14px;">launch</span>
             </a>
         </div>
 
-        <div class="tab-content-wrapper">
-            <div id="schoolai-title" class="tab-content active">
-            <span class="tab-label">TITLE</span>
-            <h3>Interactive AI/ML Learning Space via SchoolAI Chatbot</h3>
-            <p>An interactive, personalized learning environment built on the SchoolAI platform, designed to explore core concepts in Artificial Intelligence and Machine Learning through guided conversational tutoring, real-time feedback, and adaptive inquiry.</p>
-            </div>
-
-            <div id="schoolai-objective" class="tab-content">
-            <span class="tab-label">OBJECTIVE</span>
-            <h3>Why did you create it?</h3>
-            <p>To deepen foundational knowledge of AI/ML through active, inquiry-based dialogue rather than passive video consumption or static reading. The objective was to utilize an adaptive chatbot environment that tailors complex technical concepts—such as supervised learning, model training, and neural networks—to individual learning paces while maintaining academic rigor.</p>
-            </div>
-
-            <div id="schoolai-process" class="tab-content">
-            <span class="tab-label">PROCESS</span>
-            <h3>How did you make it?</h3>
-            <ul>
-                <li><strong>Pedagogical Structuring:</strong> Configured prompt parameters within SchoolAI Spaces to act as an adaptive Socratic tutor.</li>
-                <li><strong>Interactive Probing:</strong> Designed diagnostic questions to evaluate conceptual comprehension in real time.</li>
-                <li><strong>Scaffolded Learning:</strong> Implemented guided hints and structured explanations to address knowledge gaps dynamically.</li>
-                <li><strong>Portfolio Integration:</strong> Formatted and embedded the live interactive session into a dedicated theme-compliant view.</li>
-            </ul>
-            </div>
-
-            <div id="schoolai-tools" class="tab-content">
-            <span class="tab-label">TOOLS</span>
-            <h3>Tech Used</h3>
-            <div class="tech-tags">
-                <span class="tech-tag">SchoolAI Platform</span>
-                <span class="tech-tag">Socratic Prompt Engineering</span>
-                <span class="tech-tag">Adaptive Learning Spaces</span>
-                <span class="tech-tag">HTML5 / CSS3</span>
-                <span class="tech-tag">JavaScript</span>
-            </div>
-            </div>
-
-            <div id="schoolai-value" class="tab-content">
-            <span class="tab-label">VALUE</span>
-            <h3>Artifact-Specific Value Proposition</h3>
-            <p>This artifact demonstrates a strong understanding of modern EdTech frameworks and conversational user experience (CUX) design. It showcases how specialized AI learning tools like SchoolAI can be structured to foster active learning, real-time assessment, and personalized instructional pathways in technical subjects.</p>
+        <div id="schoolai-title" class="tab-content active">
+            <div class="content-label">What is it?</div>
+            <div class="content-body">
+                <strong>Interactive AI/ML Learning Space via SchoolAI Chatbot</strong>
             </div>
         </div>
+
+        <div id="schoolai-objective" class="tab-content">
+            <div class="content-label">Why did you create it?</div>
+            <div class="content-body">
+                To deepen foundational knowledge of AI/ML through active, inquiry-based dialogue rather than passive video consumption or static reading. The objective was to utilize an adaptive chatbot environment that tailors complex technical concepts—such as supervised learning, model training, and neural networks—to individual learning paces while maintaining academic rigor.
+            </div>
         </div>
+
+        <div id="schoolai-process" class="tab-content">
+            <div class="content-label">How did you make it?</div>
+            <div class="content-body">
+                <ul>
+                    <li><strong>Pedagogical Structuring:</strong> Configured prompt parameters within SchoolAI Spaces to act as an adaptive Socratic tutor.</li>
+                    <li><strong>Interactive Probing:</strong> Designed diagnostic questions to evaluate conceptual comprehension in real time.</li>
+                    <li><strong>Scaffolded Learning:</strong> Implemented guided hints and structured explanations to address knowledge gaps dynamically.</li>
+                    <li><strong>Portfolio Integration:</strong> Formatted and embedded the live interactive session into a dedicated theme-compliant view.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="schoolai-tools" class="tab-content">
+            <div class="content-label">Tech Used</div>
+            <div class="content-body">
+                <div class="tools-wrapper">
+                    <div class="tool-pill"><span class="material-icons">smart_toy</span> SchoolAI Platform</div>
+                    <div class="tool-pill"><span class="material-icons">psychology</span> Socratic Prompting</div>
+                    <div class="tool-pill"><span class="material-icons">school</span> Adaptive Spaces</div>
+                    <div class="tool-pill"><span class="material-icons">code</span> HTML5 & CSS3</div>
+                    <div class="tool-pill"><span class="material-icons">javascript</span> JavaScript</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="schoolai-value" class="tab-content">
+            <div class="content-label">Artifact-Specific Value Proposition</div>
+            <div class="content-body">
+                This artifact demonstrates a strong understanding of modern EdTech frameworks and conversational user experience (CUX) design. It showcases how specialized AI learning tools like SchoolAI can be structured to foster active learning, real-time assessment, and personalized instructional pathways in technical subjects.
+            </div>
+        </div>
+
+    </div>
 </div>
 
 </body>
