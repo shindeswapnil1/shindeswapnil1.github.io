@@ -523,3 +523,179 @@ body {
 .highlight-list strong {
     color: var(--text-white);
 }
+
+/* ==========================================================================
+   ARTIFACT 4 / SCHOOLAI SPACE THEME STYLES
+   ========================================================================== */
+
+.artifact-detail-container {
+  max-width: 1200px;
+  margin: 100px auto 60px auto;
+  padding: 0 24px;
+}
+
+.artifact-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #222;
+  margin-bottom: 32px;
+}
+
+.artifact-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: #888;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.artifact-header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 6px 0;
+}
+
+.artifact-header .subtitle {
+  color: #a0a0a0;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.external-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 18px;
+  background-color: #161616;
+  border: 1px solid #333;
+  border-radius: 8px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.external-btn:hover {
+  background-color: #222;
+  border-color: #555;
+}
+
+.overview-card {
+  background: rgba(20, 20, 20, 0.6);
+  border: 1px solid #222;
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  padding: 28px;
+  margin-bottom: 32px;
+}
+
+.overview-card h2 {
+  font-size: 1.3rem;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.overview-card p {
+  color: #ccc;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.highlight-item {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.highlight-item h4 {
+  color: #fff;
+  margin: 0 0 6px 0;
+  font-size: 0.95rem;
+}
+
+.highlight-item p {
+  color: #888;
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+/* Chat Embed Mockup Frame */
+.chat-embed-container {
+  background-color: #0d0d0d;
+  border: 1px solid #222;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.chat-embed-header {
+  background-color: #161616;
+  border-bottom: 1px solid #222;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.window-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dot.red { background-color: #ff5f56; }
+.dot.yellow { background-color: #ffbd2e; }
+.dot.green { background-color: #27c93f; }
+
+.chat-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #777;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.chat-embed-body {
+  width: 100%;
+  height: 650px;
+  background-color: #000;
+}
+
+.schoolai-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: #0d0d0d;
+}
+
+@media (max-width: 768px) {
+  .artifact-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .chat-embed-body {
+    height: 500px;
+  }
+}
