@@ -3,70 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SchoolAI Space | AI/ML Learning Chatbot</title>
+  <title>Artifact 04 - SchoolAI Space</title>
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="scripts.js" defer></script>
 </head>
 <body class="dark-theme">
 
-  <div id="navbar-placeholder"></div>
+  <div class="container">
+    <div id="nav-placeholder"></div>
 
-  <main class="artifact-detail-container">
-    <header class="artifact-header">
-      <div class="header-left">
-        <span class="artifact-badge">ARTIFACT 04</span>
-        <h1>Interactive AI/ML Learning Space</h1>
-        <p class="subtitle">Personalized AI/ML Learning powered by SchoolAI Chatbot</p>
-      </div>
-      <div class="header-right">
-        <a href="https://schoolai.com" target="_blank" class="external-btn">
-          Visit SchoolAI Platform ↗
-        </a>
-      </div>
-    </header>
+    <main class="artifact-detail-container">
+      <header class="artifact-header">
+        <div class="header-left">
+          <span class="artifact-badge">ARTIFACT 04</span>
+          <h1>Interactive AI/ML Learning Space</h1>
+          <p class="subtitle">Personalized AI/ML Learning powered by SchoolAI Chatbot</p>
+        </div>
+        <div class="header-right">
+          <a href="https://schoolai.com" target="_blank" class="external-btn">
+            Visit SchoolAI Platform <span class="material-icons" style="font-size: 14px; margin-left: 4px;">launch</span>
+          </a>
+        </div>
+      </header>
 
-    <section class="artifact-body">
-      <div class="overview-card">
-        <h2>About This Learning Experience</h2>
-        <p>This space utilizes SchoolAI's interactive learning environment to provide targeted, step-by-step instruction on Artificial Intelligence and Machine Learning concepts. By shifting from passive reading to active dialogue, the conversational agent probes understanding, clarifies edge cases, and provides instant feedback.</p>
-        
-        <div class="highlights-grid">
-          <div class="highlight-item">
-            <h4>Active Inquiry</h4>
-            <p>Socratic question-and-answer flow ensures concept mastery.</p>
+      <section class="artifact-body">
+        <div class="try-it-banner">
+          <div class="banner-icon">
+            <span class="material-icons">touch_app</span>
           </div>
-          <div class="highlight-item">
-            <h4>Real-time Feedback</h4>
-            <p>Instant clarification on AI/ML terminology and model architecture.</p>
-          </div>
-          <div class="highlight-item">
-            <h4>Guided Learning</h4>
-            <p>Structured guardrails keep conversations aligned with educational outcomes.</p>
+          <div class="banner-text">
+            <h3>Explore My Session & Try It Yourself!</h3>
+            <p>You can review my logged AI/ML learning conversation in the window below, or click directly into the chat prompt to start your own interactive tutoring session live on the platform.</p>
           </div>
         </div>
-      </div>
 
-      <div class="chat-embed-container">
-        <div class="chat-embed-header">
-          <div class="window-dots">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
+        <div class="overview-card">
+          <h2>About This Learning Experience</h2>
+          <p>This space utilizes SchoolAI's interactive learning environment to provide targeted, step-by-step instruction on Artificial Intelligence and Machine Learning concepts. By shifting from passive reading to active dialogue, the conversational agent probes understanding, clarifies edge cases, and provides instant feedback.</p>
+          
+          <div class="highlights-grid">
+            <div class="highlight-item">
+              <h4> Active Inquiry</h4>
+              <p>Socratic question-and-answer flow ensures concept mastery.</p>
+            </div>
+            <div class="highlight-item">
+              <h4> Real-time Feedback</h4>
+              <p>Instant clarification on AI/ML terminology and model architecture.</p>
+            </div>
+            <div class="highlight-item">
+              <h4>   Guided Learning</h4>
+              <p>Structured guardrails keep conversations aligned with educational outcomes.</p>
+            </div>
           </div>
-          <span class="chat-title">SchoolAI Space — Interactive AI/ML Tutor Session</span>
         </div>
-        <div class="chat-embed-body">
-          <iframe 
-            src="https://student.schoolai.com/dot/spaces/90efba38-f0e3-46f8-b268-a646a7aa3ebe/chats/111dfca6-d7df-4671-ad87-c1eac4d7cb97" 
-            title="SchoolAI Learning Space" 
-            class="schoolai-iframe"
-            allow="microphone; ">
-          </iframe>
-        </div>
-      </div>
-    </section>
-  </main>
 
-  <script src="scripts.js"></script>
+        <div class="chat-embed-container">
+          <div class="chat-embed-header">
+            <div class="window-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <span class="chat-title">SchoolAI Space — Interactive AI/ML Tutor Session</span>
+          </div>
+          <div class="chat-embed-body">
+            <iframe 
+              src="https://student.schoolai.com/dot/spaces/90efba38-f0e3-46f8-b268-a646a7aa3ebe/chats/111dfca6-d7df-4671-ad87-c1eac4d7cb97" 
+              title="SchoolAI Learning Space" 
+              class="schoolai-iframe"
+              allow="microphone;">
+            </iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
 </body>
 </html>
