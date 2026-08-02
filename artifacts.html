@@ -297,6 +297,80 @@
         </div>
 
     </div>
+
+    <div class="tab-pane-container" style="margin-top: 60px;">
+        
+        <div class="tab-header" style="justify-content: space-between; align-items: center; padding-right: 15px;">
+            <div style="display: flex;">
+                <button class="tab-btn active" onclick="openTab(event, 'data-title')">
+                    <span class="material-icons">title</span> Title
+                </button>
+                <button class="tab-btn" onclick="openTab(event, 'data-objective')">
+                    <span class="material-icons">track_changes</span> Objective
+                </button>
+                <button class="tab-btn" onclick="openTab(event, 'data-process')">
+                    <span class="material-icons">account_tree</span> Process
+                </button>
+                <button class="tab-btn" onclick="openTab(event, 'data-tools')">
+                    <span class="material-icons">build</span> Tools
+                </button>
+                <button class="tab-btn" onclick="openTab(event, 'data-value')">
+                    <span class="material-icons">diamond</span> Value
+                </button>
+            </div>
+
+            <a href="artifact5.html" target="_blank" style="display: flex; align-items: center; gap: 6px; background: var(--primary-accent); color: var(--bg-black); text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: 700; white-space: nowrap; transition: opacity 0.2s;">
+                Open Data Challenge <span class="material-icons" style="font-size: 14px;">launch</span>
+            </a>
+        </div>
+
+        <div id="data-title" class="tab-content active">
+            <div class="content-label">What is it?</div>
+            <div class="content-body">
+                <strong>Data Challenge Scenarios: Processing, Privacy & Security Exploration</strong>
+            </div>
+        </div>
+
+        <div id="data-objective" class="tab-content">
+            <div class="content-label">Why did you create it?</div>
+            <div class="content-body">
+                To evaluate real-world data engineering bottlenecks through active inquiry with an AI learning assistant. The objective was to analyze technical methodologies for data processing and cleaning while addressing the critical compliance, privacy, and security challenges associated with sharing data across modern machine learning workflows.
+            </div>
+        </div>
+
+        <div id="data-process" class="tab-content">
+            <div class="content-label">How did you make it?</div>
+            <div class="content-body">
+                <ul>
+                    <li><strong>Data Processing & Cleaning Strategy:</strong> Discussed methodologies for handling missing values, outlier detection, data normalization, and structured feature preparation prior to model ingestion.</li>
+                    <li><strong>Privacy & Security Risk Assessment:</strong> Evaluated the vulnerabilities of data sharing in ML pipeline architectures, analyzing risks related to data leakage, sensitive PII exposure, and unauthorized model inference.</li>
+                    <li><strong>Governance & Compliance Frameworks:</strong> Explored technical mitigation strategies including differential privacy, anonymization, secure multi-party computation, and role-based access controls (RBAC).</li>
+                    <li><strong>Interactive Socratic Dialogue:</strong> Structured conversational prompts within the SchoolAI space to iteratively test scenario-based data engineering problems and trade-offs.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="data-tools" class="tab-content">
+            <div class="content-label">Tech Used</div>
+            <div class="content-body">
+                <div class="tools-wrapper">
+                    <div class="tool-pill"><span class="material-icons">smart_toy</span> SchoolAI Platform</div>
+                    <div class="tool-pill"><span class="material-icons">cleaning_services</span> Data Cleaning Pipelines</div>
+                    <div class="tool-pill"><span class="material-icons">security</span> Data Privacy & Security</div>
+                    <div class="tool-pill"><span class="material-icons">psychology</span> Socratic Prompting</div>
+                    <div class="tool-pill"><span class="material-icons">verified_user</span> ML Governance</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="data-value" class="tab-content">
+            <div class="content-label">Artifact-Specific Value Proposition</div>
+            <div class="content-body">
+                Demonstrates a holistic understanding of end-to-end data pipelines, bridging technical data preprocessing strategies with enterprise-grade data governance. It highlights the ability to identify security vulnerabilities, ensure regulatory compliance, and implement responsible data-sharing frameworks essential for production-grade machine learning systems.
+            </div>
+        </div>
+
+    </div>
 </div>
 
 </body>
