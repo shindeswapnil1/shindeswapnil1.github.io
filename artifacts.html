@@ -1,8 +1,3 @@
-In `artifacts.html`, the `.tab-header` for Artifact 6 was missing its closing `</div>` tag. Because of that missing tag, all the tab content was nested inside the flex header, which corrupted the button layout, prevented the tab panes from separating, and pointed the link to `artifact3.html` instead of `artifact6.html`. In addition, `style="margin-top: 60px;"` was missing from the container, which is needed to match the vertical gap used on all other panes.
-
-Here is the complete, fully corrected `artifacts.html` file. Replace your entire `artifacts.html` file with this code:
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -466,5 +461,3 @@ Here is the complete, fully corrected `artifacts.html` file. Replace your entire
 
 </body>
 </html>
-
-```
