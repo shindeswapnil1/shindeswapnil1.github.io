@@ -15,19 +15,20 @@
 
     <header class="page-header">
         <h1 class="page-title">Artifact <em>Details</em>.</h1>
-        <p class="page-subtitle">Brief summary of the Objective, process, tools and value of specific deliverables.</p>
+        <p class="page-subtitle">Brief summary of the Objective, process, tools, value, and reflections of specific deliverables.</p>
     </header>
 
-    <!-- ARTIFACT 1 -->
+    <!-- ARTIFACT 1: EVOLUTION OF AI TIMELINE -->
     <div class="tab-pane-container">
         
         <div class="tab-header" style="justify-content: space-between; align-items: center; padding-right: 15px;">
-            <div style="display: flex;">
+            <div style="display: flex; flex-wrap: wrap; gap: 4px;">
                 <button class="tab-btn active" onclick="openTab(event, 'tab-title')"><span class="material-icons">title</span> Title</button>
                 <button class="tab-btn" onclick="openTab(event, 'tab-objective')"><span class="material-icons">track_changes</span> Objective</button>
                 <button class="tab-btn" onclick="openTab(event, 'tab-process')"><span class="material-icons">account_tree</span> Process</button>
                 <button class="tab-btn" onclick="openTab(event, 'tab-tools')"><span class="material-icons">build</span> Tools</button>
                 <button class="tab-btn" onclick="openTab(event, 'tab-value')"><span class="material-icons">diamond</span> Value</button>
+                <button class="tab-btn" onclick="openTab(event, 'tab-learnings')"><span class="material-icons">psychology_alt</span> Learnings</button>
             </div>
             
             <a href="artifact1.html" target="_blank" style="display: flex; align-items: center; gap: 6px; background: var(--primary-accent); color: var(--bg-black); text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: 700; white-space: nowrap; transition: opacity 0.2s;">
@@ -79,13 +80,24 @@
             </div>
         </div>
 
+        <div id="tab-learnings" class="tab-content">
+            <div class="content-label">Reflection & Lessons Learned</div>
+            <div class="content-body">
+                <ul>
+                    <li><strong>Responsive SVG Coordinate Challenges:</strong> Fixed pixel dimensions (1400px fixed path) caused severe overflow and clipping on mobile viewports. I learned to wrap absolute coordinate vectors in a dynamic JavaScript aspect-ratio calculation and CSS horizontal scroll wrapper.</li>
+                    <li><strong>Visual Hierarchy & Thematic Signals:</strong> Applied "Liquid Glass" styling where historical boom eras use vibrant neon-purple frosted pills, while the AI Winter utilizes icy-cyan pills to visually reinforce funding freezes.</li>
+                    <li><strong>Feedback-Driven Refinements:</strong> User testing revealed bottom cutoffs during scaling. I resolved this by transitioning container constraints from <code>overflow-y: hidden</code> to <code>overflow-y: auto</code> with an 850px minimum height baseline.</li>
+                </ul>
+            </div>
+        </div>
+
     </div>
     
-    <!-- ARTIFACT 2 -->
+    <!-- ARTIFACT 2: TUNEBOT AI -->
     <div class="tab-pane-container" style="margin-top: 60px;">
         
         <div class="tab-header" style="justify-content: space-between; align-items: center; padding-right: 15px;">
-            <div style="display: flex;">
+            <div style="display: flex; flex-wrap: wrap; gap: 4px;">
                 <button class="tab-btn active" onclick="openTab(event, 'tunebot-title')">
                     <span class="material-icons">title</span> Title
                 </button>
@@ -101,9 +113,12 @@
                 <button class="tab-btn" onclick="openTab(event, 'tunebot-value')">
                     <span class="material-icons">diamond</span> Value
                 </button>
+                <button class="tab-btn" onclick="openTab(event, 'tunebot-learnings')">
+                    <span class="material-icons">psychology_alt</span> Learnings
+                </button>
             </div>
 
-            <a href="tunebot.html" target="_blank" style="display: flex; align-items: center; gap: 6px; background: var(--primary-accent); color: var(--bg-black); text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: 700; white-space: nowrap; transition: opacity 0.2s;">
+            <a href="artifact2.html" target="_blank" style="display: flex; align-items: center; gap: 6px; background: var(--primary-accent); color: var(--bg-black); text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: 700; white-space: nowrap; transition: opacity 0.2s;">
                 Open TuneBot <span class="material-icons" style="font-size: 14px;">launch</span>
             </a>
         </div>
@@ -154,13 +169,24 @@
             </div>
         </div>
 
+        <div id="tunebot-learnings" class="tab-content">
+            <div class="content-label">Reflection & Lessons Learned</div>
+            <div class="content-body">
+                <ul>
+                    <li><strong>Multi-Hop API Resilience:</strong> Connecting third-party APIs (Pollinations.ai → iTunes Search JSONP → Song.link → Spotify Embed) required strict error handling, fallback preview audio tags, and localStorage caching to reduce network latency.</li>
+                    <li><strong>Prompt Constraints for Deterministic Outputs:</strong> Enforcing strict system instructions ensured the LLM produced pure JSON without conversational markdown wrappers, allowing client-side parsers to extract recommendations reliably.</li>
+                    <li><strong>Dual-Engine Architecture:</strong> Engineered a zero-dependency local keyword scoring fallback mechanism ensuring that even during external API downtime, users receive instant mood-based music recommendations.</li>
+                </ul>
+            </div>
+        </div>
+
     </div>
 
-    <!-- ARTIFACT 3 -->
+    <!-- ARTIFACT 3: ML VS DEEP LEARNING REPORT -->
     <div class="tab-pane-container" style="margin-top: 60px;">
         
         <div class="tab-header" style="justify-content: space-between; align-items: center; padding-right: 15px;">
-            <div style="display: flex;">
+            <div style="display: flex; flex-wrap: wrap; gap: 4px;">
                 <button class="tab-btn active" onclick="openTab(event, 'ml-title')">
                     <span class="material-icons">title</span> Title
                 </button>
@@ -175,6 +201,9 @@
                 </button>
                 <button class="tab-btn" onclick="openTab(event, 'ml-value')">
                     <span class="material-icons">diamond</span> Value
+                </button>
+                <button class="tab-btn" onclick="openTab(event, 'ml-learnings')">
+                    <span class="material-icons">psychology_alt</span> Learnings
                 </button>
             </div>
 
@@ -201,9 +230,9 @@
             <div class="content-label">How did you make it?</div>
             <div class="content-body">
                 <ul>
-                    <li><strong>Architectural Analysis:</strong> Contrasted the handling of structured, tabular data by Support Vector Machines (SVM) against the processing of unstructured spatial data by Convolutional Neural Networks (CNNs)</li>
-                    <li><strong>Feature Engineering Evaluation:</strong> Examined the manual feature engineering bottleneck of classical algorithms compared to the automated feature extraction capabilities of deep learning hidden layers</li>
-                    <li><strong>Performance Trade-offs:</strong> Analyzed the computational resource efficiency of traditional ML running on CPUs versus the massive parallel execution power of Deep Learning requiring GPUs/TPUs</li>
+                    <li><strong>Architectural Analysis:</strong> Contrasted the handling of structured, tabular data by Support Vector Machines (SVM) against the processing of unstructured spatial data by Convolutional Neural Networks (CNNs).</li>
+                    <li><strong>Feature Engineering Evaluation:</strong> Examined the manual feature engineering bottleneck of classical algorithms compared to the automated feature extraction capabilities of deep learning hidden layers.</li>
+                    <li><strong>Performance Trade-offs:</strong> Analyzed the computational resource efficiency of traditional ML running on CPUs versus the massive parallel execution power of Deep Learning requiring GPUs/TPUs.</li>
                 </ul>
             </div>
         </div>
@@ -214,6 +243,7 @@
                 <div class="tools-wrapper">
                     <div class="tool-pill"><span class="material-icons">description</span> Technical Research</div>
                     <div class="tool-pill"><span class="material-icons">psychology</span> Analytical Strategy</div>
+                    <div class="tool-pill"><span class="material-icons">menu_book</span> APA 7th Edition</div>
                 </div>
             </div>
         </div>
@@ -225,13 +255,24 @@
             </div>
         </div>
 
+        <div id="ml-learnings" class="tab-content">
+            <div class="content-label">Reflection & Lessons Learned</div>
+            <div class="content-body">
+                <ul>
+                    <li><strong>Algorithmic Trade-off Analysis:</strong> Gained deep insight into why Deep Learning is not universally superior; on small-to-medium structured tabular datasets, deep networks overfit, whereas SVMs provide superior generalization and explainability.</li>
+                    <li><strong>Native Academic Web Typography:</strong> Replaced clunky, unstyled iframe PDF embeds with native HTML/CSS typography tailored to a dark theme, adding a direct PDF download button for accessibility.</li>
+                    <li><strong>Peer Feedback & Scholarly Citations:</strong> Addressed peer review feedback by rigorously validating APA 7th edition in-text citations across all 5 evaluation dimensions in the comparison matrix.</li>
+                </ul>
+            </div>
+        </div>
+
     </div>
     
-    <!-- ARTIFACT 4 -->
+    <!-- ARTIFACT 4: SCHOOLAI LEARNING SPACE -->
     <div class="tab-pane-container" style="margin-top: 60px;">
         
         <div class="tab-header" style="justify-content: space-between; align-items: center; padding-right: 15px;">
-            <div style="display: flex;">
+            <div style="display: flex; flex-wrap: wrap; gap: 4px;">
                 <button class="tab-btn active" onclick="openTab(event, 'schoolai-title')">
                     <span class="material-icons">title</span> Title
                 </button>
@@ -246,6 +287,9 @@
                 </button>
                 <button class="tab-btn" onclick="openTab(event, 'schoolai-value')">
                     <span class="material-icons">diamond</span> Value
+                </button>
+                <button class="tab-btn" onclick="openTab(event, 'schoolai-learnings')">
+                    <span class="material-icons">psychology_alt</span> Learnings
                 </button>
             </div>
 
@@ -300,13 +344,24 @@
             </div>
         </div>
 
+        <div id="schoolai-learnings" class="tab-content">
+            <div class="content-label">Reflection & Lessons Learned</div>
+            <div class="content-body">
+                <ul>
+                    <li><strong>Conversational UX Guardrails:</strong> Configured conversational constraints so the AI tutor actively probed prerequisite understanding through Socratic questioning rather than immediately delivering answers.</li>
+                    <li><strong>iFrame Auto-Focus Debugging:</strong> Resolved browser auto-focus jumps where embedded chat textareas forced the host window to scroll down upon page render, fixing it via <code>tabindex="-1"</code>, <code>loading="lazy"</code>, and an auto top-scroll script.</li>
+                    <li><strong>Active vs. Passive Knowledge Retention:</strong> Proved that conversational back-and-forth debugging of ML terminology yields significantly faster conceptual consolidation than reading static documentation.</li>
+                </ul>
+            </div>
+        </div>
+
     </div>
 
-    <!-- ARTIFACT 5 -->
+    <!-- ARTIFACT 5: DATA CHALLENGE SCENARIOS -->
     <div class="tab-pane-container" style="margin-top: 60px;">
         
         <div class="tab-header" style="justify-content: space-between; align-items: center; padding-right: 15px;">
-            <div style="display: flex;">
+            <div style="display: flex; flex-wrap: wrap; gap: 4px;">
                 <button class="tab-btn active" onclick="openTab(event, 'data-title')">
                     <span class="material-icons">title</span> Title
                 </button>
@@ -321,6 +376,9 @@
                 </button>
                 <button class="tab-btn" onclick="openTab(event, 'data-value')">
                     <span class="material-icons">diamond</span> Value
+                </button>
+                <button class="tab-btn" onclick="openTab(event, 'data-learnings')">
+                    <span class="material-icons">psychology_alt</span> Learnings
                 </button>
             </div>
 
@@ -374,13 +432,25 @@
                 Demonstrates a holistic understanding of end-to-end data pipelines, bridging technical data preprocessing strategies with enterprise-grade data governance. It highlights the ability to identify security vulnerabilities, ensure regulatory compliance, and implement responsible data-sharing frameworks essential for production-grade machine learning systems.
             </div>
         </div>
+
+        <div id="data-learnings" class="tab-content">
+            <div class="content-label">Reflection & Lessons Learned</div>
+            <div class="content-body">
+                <ul>
+                    <li><strong>Data Governance vs. Pipeline Throughput:</strong> Learned that preprocessing pipelines cannot treat cleaning in isolation from compliance; masking PII and differential privacy must be integrated directly into early ETL workflows to prevent downstream leakage.</li>
+                    <li><strong>Scenario-Based Stress Testing:</strong> Interacting with edge-case scenarios demonstrated how naive imputation (e.g., mean/median) can silently inject bias or destroy variance in skewed datasets.</li>
+                    <li><strong>Component Reuse in Web Design:</strong> Leveraged modular CSS styles and global JavaScript utilities to spin up a fully isolated, theme-consistent artifact detail page without introducing technical debt.</li>
+                </ul>
+            </div>
+        </div>
+
     </div>
 
     <!-- ARTIFACT 6: MODEL VALIDATION & VERIFICATION -->
     <div class="tab-pane-container" style="margin-top: 60px;">
         
         <div class="tab-header" style="justify-content: space-between; align-items: center; padding-right: 15px;">
-            <div style="display: flex;">
+            <div style="display: flex; flex-wrap: wrap; gap: 4px;">
                 <button class="tab-btn active" onclick="openTab(event, 'val-title')">
                     <span class="material-icons">title</span> Title
                 </button>
@@ -396,6 +466,9 @@
                 <button class="tab-btn" onclick="openTab(event, 'val-value')">
                     <span class="material-icons">diamond</span> Value
                 </button>
+                <button class="tab-btn" onclick="openTab(event, 'val-learnings')">
+                    <span class="material-icons">psychology_alt</span> Learnings
+                </button>
             </div>
 
             <a href="artifact6.html" target="_blank" style="display: flex; align-items: center; gap: 6px; background: var(--primary-accent); color: var(--bg-black); text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: 700; white-space: nowrap; transition: opacity 0.2s;">
@@ -403,7 +476,6 @@
             </a>
         </div>
 
-        <!-- Tab 1: Title -->
         <div id="val-title" class="tab-content active">
             <div class="content-label">What is it?</div>
             <div class="content-body">
@@ -411,28 +483,25 @@
             </div>
         </div>
 
-        <!-- Tab 2: Objective -->
         <div id="val-objective" class="tab-content">
             <div class="content-label">Why did you create it?</div>
             <div class="content-body">
-                To evaluate the technical rigor, clinical validation strategies, metric trade-offs, and ethical safeguards of machine learning pipelines in Clinical Decision Support Systems (CDSS)[cite: 1]. The report critiques multi-output classification methodologies and proposes production safeguards including bias audits, HIPAA compliance, and concept drift monitoring[cite: 1].
+                To evaluate the technical rigor, clinical validation strategies, metric trade-offs, and ethical safeguards of machine learning pipelines in Clinical Decision Support Systems (CDSS)[cite: 1, 10]. The report critiques multi-output classification methodologies and proposes production safeguards including bias audits, HIPAA compliance, and concept drift monitoring[cite: 1, 10].
             </div>
         </div>
 
-        <!-- Tab 3: Process -->
         <div id="val-process" class="tab-content">
             <div class="content-label">How did you make it?</div>
             <div class="content-body">
                 <ul>
-                    <li><strong>Data Preprocessing Audit:</strong> Evaluated crowdsourced MTurk/Qualtrics clinical data vetted by experts down to 3,931 clean instances with binary feature encoding[cite: 1].</li>
-                    <li><strong>Algorithm Benchmarking:</strong> Analyzed multi-output wrappers across Random Forest (93.3% accuracy), KNN (78.5%), XGBoost (76.4%), and AdaBoost (67.3%)[cite: 1].</li>
-                    <li><strong>Validation Critique:</strong> Identified metric myopia (over-reliance on raw accuracy in imbalanced clinical spaces) and simple train/test split limitations[cite: 1].</li>
-                    <li><strong>Safeguard Framework:</strong> Proposed post-deployment Fairness/Disparate Impact Audits, Differential Privacy, Concept Drift dashboards, and Human-in-the-Loop (HITL) overrides[cite: 1].</li>
+                    <li><strong>Data Preprocessing Audit:</strong> Evaluated crowdsourced MTurk/Qualtrics clinical data vetted by experts down to 3,931 clean instances with binary feature encoding[cite: 1, 10].</li>
+                    <li><strong>Algorithm Benchmarking:</strong> Analyzed multi-output wrappers across Random Forest (93.3% accuracy), KNN (78.5%), XGBoost (76.4%), and AdaBoost (67.3%)[cite: 1, 10].</li>
+                    <li><strong>Validation Critique:</strong> Identified metric myopia (over-reliance on raw accuracy in imbalanced clinical spaces) and simple train/test split limitations[cite: 1, 10].</li>
+                    <li><strong>Safeguard Framework:</strong> Proposed post-deployment Fairness/Disparate Impact Audits, Differential Privacy, Concept Drift dashboards, and Human-in-the-Loop (HITL) overrides[cite: 1, 10].</li>
                 </ul>
             </div>
         </div>
 
-        <!-- Tab 4: Tools -->
         <div id="val-tools" class="tab-content">
             <div class="content-label">Tech Used</div>
             <div class="content-body">
@@ -447,11 +516,21 @@
             </div>
         </div>
 
-        <!-- Tab 5: Value -->
         <div id="val-value" class="tab-content">
             <div class="content-label">Artifact-Specific Value Proposition</div>
             <div class="content-body">
-                Demonstrates high-level competency in AI model verification, clinical ML validation, and responsible AI governance[cite: 1]. It highlights the ability to move beyond standard accuracy metrics, design multi-label clinical pipelines, and formulate production monitoring strategies for high-stakes healthcare applications[cite: 1].
+                Demonstrates high-level competency in AI model verification, clinical ML validation, and responsible AI governance[cite: 1, 10]. It highlights the ability to move beyond standard accuracy metrics, design multi-label clinical pipelines, and formulate production monitoring strategies for high-stakes healthcare applications[cite: 1, 10].
+            </div>
+        </div>
+
+        <div id="val-learnings" class="tab-content">
+            <div class="content-label">Reflection & Lessons Learned</div>
+            <div class="content-body">
+                <ul>
+                    <li><strong>Overcoming "Metric Myopia" in Healthcare:</strong> Realized that a standalone 93.3% accuracy in multi-output clinical models can conceal severe false-negative risks on critical drug interactions; clinical safety requires Precision-Recall curves and F1-macro tracking[cite: 1, 10].</li>
+                    <li><strong>Multi-Output Target Dimensionality:</strong> Learned how wrapping ensemble classifiers inside multi-output meta-estimators enables models to learn joint decision boundaries across overlapping chronic conditions (e.g., Type 2 Diabetes alongside depression and arthritis)[cite: 1, 10].</li>
+                    <li><strong>Post-Deployment Auditing & HITL:</strong> Modeled real-world CDSS governance by designing continuous Concept Drift monitoring and Human-in-the-Loop clinician override protocols to protect patient outcomes[cite: 1, 10].</li>
+                </ul>
             </div>
         </div>
 
