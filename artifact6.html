@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artifact 6 - Model Validation & Verification | Swapnil Shinde</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    .report-container {
+      max-width: 900px;
+      margin: 40px auto 100px auto;
+      padding: 0 20px;
+    }
+    .report-header-card {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 12px;
+      padding: 32px;
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .report-meta h1 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .report-meta p {
+      color: #888;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      color: #000;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      white-space: nowrap;
+      transition: background 0.2s ease;
+    }
+    .download-btn:hover {
+      background: #ccc;
+    }
+    .paper-body {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 12px;
+      padding: 40px;
+      color: #ccc;
+      line-height: 1.8;
+      font-size: 15px;
+    }
+    .paper-body h2 {
+      color: #fff;
+      font-size: 20px;
+      margin-top: 32px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid #222;
+      padding-bottom: 8px;
+    }
+    .paper-body h3 {
+      color: #eee;
+      font-size: 16px;
+      margin-top: 20px;
+      margin-bottom: 8px;
+    }
+    .paper-body p {
+      margin-bottom: 16px;
+    }
+    .paper-body ul {
+      margin-left: 24px;
+      margin-bottom: 20px;
+    }
+    .paper-body li {
+      margin-bottom: 8px;
+    }
+    .benchmark-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    .benchmark-table th, .benchmark-table td {
+      border: 1px solid #2a2a2a;
+      padding: 10px 14px;
+      text-align: left;
+    }
+    .benchmark-table th {
+      background: #181818;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Dynamic Navigation Bar -->
+  <div id="nav-placeholder"></div>
+
+  <div class="report-container">
+    <div class="report-header-card">
+      <div class="report-meta">
+        <h1>5.3 Model Validation and Verification</h1>
+        <p><strong>Course:</strong> AIML-500-01N1B — Machine Learning Fundamentals</p>
+        <p><strong>Author:</strong> Swapnil Sukhdeorao Shinde | <strong>Instructor:</strong> Dr. Lawrence Iweriebor</p>
+        <p><strong>Date:</strong> August 9th, 2026</p>
+      </div>
+      <a href="Shinde, Swapnil Sukhdeorao - 5.3 Model Validation and Verification.pdf" download class="download-btn">
+        <span class="material-icons" style="font-size: 18px;">download</span> Download PDF
+      </a>
+    </div>
+
+    <article class="paper-body">
+      <h2>Report: Predictive Modeling for DCC Medication Regimens</h2>
+      
+      <h3>Introduction</h3>
+      <p>This report reviews the study <em>“Predicting an Optimal Medication/Prescription Regimen for Patient Discordant Chronic Comorbidities Using Multi-Output Models”</em> by Ichchha Pradeep Sharma, Tam V. Nguyen, Shruti Ajay Singh, and Tom Ongwere[cite: 1]. It evaluates the project’s technical pipeline, ethical safeguards, and alignment with fundamental machine learning practices, offering actionable insights for future deployments[cite: 1].</p>
+
+      <h2>Technical Rigor: Key Project Steps</h2>
+      <h3>Data Preprocessing</h3>
+      <p>The researchers sourced data via Amazon Mechanical Turk (MTurk) and Qualtrics, capturing clinical deliberation strategies from healthcare providers treating patients with type 2 diabetes and discordant chronic comorbidities (DCCs) like arthritis and depression[cite: 1].</p>
+      <ul>
+        <li><strong>Cleaning & Quality Assurance:</strong> Clinical experts vetted MTurk responses to remove nonsensical data[cite: 1]. Missing data and outliers were filtered, yielding a final dataset of 3,931 instances[cite: 1].</li>
+        <li><strong>Feature Engineering & Encoding:</strong> Data was structured using binary inputs to represent the presence or absence of specific diseases and patient concerns (cost, weight gain, drug interactions)[cite: 1]. Categorical and textual variables were transformed using encoders[cite: 1].</li>
+      </ul>
+
+      <h3>Model Choice & Performance Metrics</h3>
+      <p>The researchers benchmarked four algorithms with multi-output wrappers[cite: 1]:</p>
+      <table class="benchmark-table">
+        <thead>
+          <tr>
+            <th>Algorithm</th>
+            <th>Accuracy Score</th>
+            <th>Evaluation & Trade-offs</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Random Forest (Selected)</strong></td>
+            <td><strong>93.3%</strong></td>
+            <td>Ensemble architecture (100 trees) effectively captured complex, non-linear relationships with high noise robustness[cite: 1].</td>
+          </tr>
+          <tr>
+            <td>K-Nearest Neighbors (KNN)</td>
+            <td>78.5%</td>
+            <td>Struggled with high dimensionality across multi-label targets[cite: 1].</td>
+          </tr>
+          <tr>
+            <td>XGBoost</td>
+            <td>76.4%</td>
+            <td>Sub-optimal convergence compared to bagging trees on binary-sparse feature sets[cite: 1].</td>
+          </tr>
+          <tr>
+            <td>AdaBoost</td>
+            <td>67.3%</td>
+            <td>Sensitive to noise and overlapping comorbidity constraints[cite: 1].</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Validation Techniques & Metric Critique</h3>
+      <p>An iterative 3-phase cycle evolved models from single-output to multi-class multi-output classifiers, tuned via <strong>GridSearchCV</strong>[cite: 1]. However, the report notes that accuracy alone is a flawed standalone metric in imbalanced clinical data; future iterations require F1-scores, precision-recall curves, and AUC-ROC[cite: 1].</p>
+
+      <h2>Proposed Post-Deployment & Monitoring Plan</h2>
+      <ul>
+        <li><strong>Fairness & Bias Audits:</strong> Conduct routine disparate impact analyses to prevent sub-optimal medication recommendations to marginalized populations[cite: 1].</li>
+        <li><strong>Privacy Preservation:</strong> Enforce strict HIPAA compliance via federated learning or differential privacy to safeguard Protected Health Information (PHI)[cite: 1].</li>
+        <li><strong>Continuous Drift Monitoring:</strong> Track both data drift (demographic/concern shifts) and concept drift (updated clinical guidelines/medications)[cite: 1].</li>
+        <li><strong>Human-in-the-Loop (HITL) Oversight:</strong> Implement clinician override logging to continuously retrain and calibrate predictive confidence[cite: 1].</li>
+      </ul>
+
+      <h2>References</h2>
+      <p style="font-size: 13px; color: #888;">
+        1. Sharma, I. P., Nguyen, T. V., Singh, S. A., & Ongwere, T. (2024). <em>Predicting an Optimal Medication/Prescription Regimen for Patient Discordant Chronic Comorbidities Using Multi-Output Models</em>. Information, 15(1), 31[cite: 1].<br>
+        2. Wasylewicz, A. T. M., & Scheepers-Hoeks, A. M. J. W. (2019). <em>Clinical Decision Support Systems</em>. Fundamentals of Clinical Data Science, Springer, Chapter 11[cite: 1].
+      </p>
+    </article>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
