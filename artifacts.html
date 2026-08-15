@@ -370,64 +370,68 @@
             </div>
         </div>
     </div>
+   <!-- ARTIFACT 6: MODEL VALIDATION & VERIFICATION -->
     <div class="tab-pane-container">
       <div class="tab-header">
         <div style="display: flex;">
           <button class="tab-btn active" onclick="openTab(event, 'val-title')">
-            <span class="material-icons">fact_check</span> Title
+            <span class="material-icons">title</span> TITLE
           </button>
           <button class="tab-btn" onclick="openTab(event, 'val-objective')">
-            <span class="material-icons">flag</span> Objective
+            <span class="material-icons">track_changes</span> OBJECTIVE
           </button>
           <button class="tab-btn" onclick="openTab(event, 'val-process')">
-            <span class="material-icons">psychology</span> Process
+            <span class="material-icons">account_tree</span> PROCESS
           </button>
           <button class="tab-btn" onclick="openTab(event, 'val-tools')">
-            <span class="material-icons">biotech</span> Tools
+            <span class="material-icons">build</span> TOOLS
           </button>
           <button class="tab-btn" onclick="openTab(event, 'val-value')">
-            <span class="material-icons">verified_user</span> Value
+            <span class="material-icons">diamond</span> VALUE
           </button>
         </div>
-        
-        <a href="artifact6.html" target="_blank" style="display: flex; align-items: center; gap: 6px; background: var(--primary-accent); color: var(--bg-black); text-decoration: none; padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: 700; white-space: nowrap; transition: opacity 0.2s;">
-                Open Report <span class="material-icons" style="font-size: 14px;">launch</span>
-            </a>
+        <a href="artifact6.html" target="_blank" class="open-tab-btn">
+          Open Report <span class="material-icons" style="font-size: 16px;">open_in_new</span>
+        </a>
       </div>
     
+      <!-- Tab 1: Title -->
       <div id="val-title" class="tab-content active">
-        <div class="content-label">Artifact Title</div>
+        <div class="content-label">WHAT IS IT?</div>
         <div class="content-body">
           <h3>Predictive Modeling for DCC Medication Regimens: Model Validation & Verification</h3>
           <p>A rigorous evaluation of multi-output predictive models designed to recommend optimal medication regimens for patients with type 2 diabetes and discordant chronic comorbidities (DCCs)[cite: 1].</p>
         </div>
       </div>
     
+      <!-- Tab 2: Objective -->
       <div id="val-objective" class="tab-content">
-        <div class="content-label">Core Objective</div>
+        <div class="content-label">WHY DID YOU CREATE IT?</div>
         <div class="content-body">
-          <h3>Why this was created</h3>
-          <p>To evaluate the technical rigor, clinical validation strategies, metric trade-offs, and ethical safeguards of machine learning pipelines deployed in Clinical Decision Support Systems (CDSS)[cite: 1]. The analysis critiques multi-output classification methodologies and proposes post-deployment safeguards including bias audits, HIPAA compliance, and concept drift monitoring[cite: 1].</p>
+          <h3>Clinical Decision Support & Model Verification</h3>
+          <p>To analyze the technical rigor, clinical validation strategies, metric trade-offs, and ethical safeguards of machine learning pipelines in Clinical Decision Support Systems (CDSS)[cite: 1]. The report critiques multi-output classification methodologies and proposes production safeguards including bias audits, HIPAA compliance, and concept drift monitoring[cite: 1].</p>
         </div>
       </div>
     
+      <!-- Tab 3: Process -->
       <div id="val-process" class="tab-content">
-        <div class="content-label">Methodology & Evaluation</div>
+        <div class="content-label">HOW DID YOU MAKE IT?</div>
         <div class="content-body">
-          <h3>How it was evaluated</h3>
+          <h3>Evaluation Methodology</h3>
           <ul style="margin-left: 20px; color: #ccc; line-height: 1.6;">
             <li><strong>Data Preprocessing Audit:</strong> Evaluated crowdsourced MTurk/Qualtrics clinical data vetted by experts down to 3,931 clean instances with binary feature encoding[cite: 1].</li>
-            <li><strong>Algorithm Benchmarking:</strong> Analyzed multi-output wrappers across Random Forest (93.3% accuracy), KNN (78.5%), XGBoost (76.4%), and AdaBoost (67.3%)[cite: 1].</li>
+            <li><strong>Algorithm Benchmarking:</strong> Evaluated multi-output wrappers across Random Forest (93.3% accuracy), KNN (78.5%), XGBoost (76.4%), and AdaBoost (67.3%)[cite: 1].</li>
             <li><strong>Validation Critique:</strong> Identified metric myopia (over-reliance on raw accuracy in imbalanced clinical spaces) and simple train/test split limitations[cite: 1].</li>
             <li><strong>Safeguard Framework:</strong> Proposed post-deployment Fairness/Disparate Impact Audits, Differential Privacy, Concept Drift dashboards, and Human-in-the-Loop (HITL) overrides[cite: 1].</li>
           </ul>
         </div>
       </div>
     
+      <!-- Tab 4: Tools -->
       <div id="val-tools" class="tab-content">
-        <div class="content-label">Technologies & Frameworks</div>
+        <div class="content-label">TECH USED</div>
         <div class="content-body">
-          <h3>Tech Stack & Concepts</h3>
+          <h3>Technologies & Frameworks</h3>
           <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px;">
             <span class="tool-pill">Multi-Output Classification</span>
             <span class="tool-pill">Random Forest</span>
@@ -439,10 +443,11 @@
         </div>
       </div>
     
+      <!-- Tab 5: Value -->
       <div id="val-value" class="tab-content">
-        <div class="content-label">Value Proposition</div>
+        <div class="content-label">ARTIFACT-SPECIFIC VALUE PROPOSITION</div>
         <div class="content-body">
-          <h3>Artifact-Specific Value</h3>
+          <h3>Value Proposition</h3>
           <p>Demonstrates high-level competency in AI model verification, clinical ML validation, and responsible AI governance[cite: 1]. It highlights the ability to move beyond standard accuracy metrics, design multi-label clinical pipelines, and formulate production monitoring strategies for high-stakes healthcare applications[cite: 1].</p>
         </div>
       </div>
